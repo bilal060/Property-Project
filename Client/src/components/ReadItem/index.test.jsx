@@ -12,8 +12,8 @@ import { crud } from '@/redux/crud/actions';
 
 const data = {
   company: 'IDURAR',
-  managerSurname: 'Lalami ',
-  managerName: 'Salah Eddine',
+  managerSurname: 'Bilal ',
+  managerName: 'Muhammad',
   email: 'idurardz@gmail.com',
   phone: '05541 144 700',
 };
