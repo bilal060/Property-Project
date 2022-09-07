@@ -9,7 +9,6 @@ async function createAdmin() {
     const Admin = require('../models/erpModels/Admin');
     var newAdmin = new Admin();
     const passwordHash = newAdmin.generateHash('admin123');
-
     await new Admin({
       email: 'admin@demo.com',
       password: passwordHash,
