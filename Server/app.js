@@ -6,7 +6,8 @@ const cors = require('cors');
 
 const cookieParser = require('cookie-parser');
 require('dotenv').config({ path: '.variables.env' });
-
+const swaggerui = require("swagger-ui-express");
+const docs = require('./docs');
 const helpers = require('./helpers');
 
 const erpApiRouter = require('./routes/erpRoutes/erpApi');
@@ -40,8 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   })
 // );
 
-// pass variables to our templates + all requests
 
+app.use('/api-docs', swaggerui.serve, swaggerui.setup(docs));
 app.use((req, res, next) => {
   res.locals.h = helpers;
   res.locals.admin = req.admin || null;
