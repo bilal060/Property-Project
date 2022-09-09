@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectAuth } from '../redux/auth/selectors';
 // import { useNetworkState } from "react-use";
+import Layout from '../layout';
 
 function App() {
   // const [isOnline] = useNetwork();
@@ -22,7 +23,9 @@ function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <Layout>
+        <h1>Hellow World</h1>
+      </Layout>
     </>
   );
 }
