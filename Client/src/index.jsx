@@ -7,7 +7,7 @@ import './styles/app.css';
 import { Router as RouterHistory } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
+import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   <Provider store={store}>
    <BrowserRouter>

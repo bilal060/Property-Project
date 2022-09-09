@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-// import Router from '@/router';
+import Router from '../router/index';
 import { useSelector } from 'react-redux';
 import { selectAuth } from '../redux/auth/selectors';
 // import { useNetworkState } from "react-use";
@@ -25,7 +25,7 @@ function App() {
     <>
       <Layout>
         
-        <h1>Hellow World</h1>
+        <Router />
       </Layout>
     </>
   );
