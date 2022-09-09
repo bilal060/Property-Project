@@ -24,6 +24,9 @@ const paymentInvoiceController = require('@/controllers/erpControllers/paymentIn
 const settingCommercialController = require('@/controllers/erpControllers/settingCommercialController');
 const settingGlobalController = require('@/controllers/erpControllers/settingGlobalController');
 const societyController = require('@/controllers/erpControllers/societyController');
+const phaseController = require('@/controllers/erpControllers/phaseController');
+const blockController = require('@/controllers/erpControllers/blockController');
+const propertyController = require('@/controllers/erpControllers/propertyController');
 
 // //_______________________________ Admin management_______________________________
 
@@ -209,5 +212,31 @@ router.route('/society/list').get(catchErrors(societyController.list));
 router.route('/society/read/:id').get(catchErrors(societyController.read));
 router.route('/society/update/:id').patch(catchErrors(societyController.update));
 router.route('/society/delete/:id').delete(catchErrors(societyController.delete));
+router.route('/society/getPictureByPath/:path').get(catchErrors(societyController.getPictureByPath));
+
+
+
+// // ---------------------------------Api for Phases----------------
+router.route('/phase/create').post(catchErrors(phaseController.create));
+router.route('/phase/list').get(catchErrors(phaseController.list));
+router.route('/phase/read/:id').get(catchErrors(phaseController.read));
+router.route('/phase/update/:id').patch(catchErrors(phaseController.update));
+router.route('/phase/delete/:id').delete(catchErrors(phaseController.delete));
+
+// // ---------------------------------Api for Blocks-------------------
+router.route('/block/create').post(catchErrors(blockController.create));
+router.route('/block/list').get(catchErrors(blockController.list));
+router.route('/block/read/:id').get(catchErrors(blockController.read));
+router.route('/block/update/:id').patch(catchErrors(blockController.update));
+router.route('/block/delete/:id').delete(catchErrors(blockController.delete));
+
+// // ---------------------------------Api for Property---------------------
+
+router.route('/property/create').post(catchErrors(propertyController.create));
+router.route('/property/list').get(catchErrors(propertyController.list));
+router.route('/property/read/:id').get(catchErrors(propertyController.read));
+router.route('/property/update/:id').patch(catchErrors(propertyController.update));
+router.route('/property/delete/:id').delete(catchErrors(propertyController.delete));
+
 
 module.exports = router;
