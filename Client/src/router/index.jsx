@@ -1,7 +1,13 @@
-import AuthRouter from './AuthRouter';
-import AppRouter from './AppRouter';
+import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import React from 'react';
+import Home from '../pages/Home';
 
-export default function Router({ isLoggedIn = false }) {
-  if (!isLoggedIn) return <AuthRouter />;
-  else return <AppRouter />;
-}
+const Router = () => {
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
+    </Switch>
+  );
+};
+
+export default Router;
