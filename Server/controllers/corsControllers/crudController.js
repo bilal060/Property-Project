@@ -5,11 +5,16 @@ exports.createCRUDController = (modelName, filter = []) => {
   const Model = mongoose.model(modelName);
   let crudMethods = {};
 
-  if (!filter.includes('create')) {
-    crudMethods.create = async (req, res) => {
-      apiRest.create(Model, req, res);
-    };
-  }
+  // if (!filter.includes('create')) {
+  //   console.log("hgh",filter.includes('create'))
+  //   crudMethods.create = async (req, res) => {
+  //     apiRest.create(Model, req, res);
+  //   };
+  // }
+  crudMethods.create = async (req, res) => {
+    console.log(req.body)
+    apiRest.create(Model, req, res);
+  };
   if (!filter.includes('read')) {
     crudMethods.read = async (req, res) => {
       apiRest.read(Model, req, res);

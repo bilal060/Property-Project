@@ -23,12 +23,14 @@ const paymentInvoiceController = require('@/controllers/erpControllers/paymentIn
 
 const settingCommercialController = require('@/controllers/erpControllers/settingCommercialController');
 const settingGlobalController = require('@/controllers/erpControllers/settingGlobalController');
+const societyController = require('@/controllers/erpControllers/societyController');
 
 // //_______________________________ Admin management_______________________________
 
 var adminPhotoStorage = multer.diskStorage({
+  
   destination: function (req, file, cb) {
-    cb(null, 'public/uploads/admin');
+    cb(null, 'public/uploads/user');
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + path.extname(file.originalname));
@@ -199,5 +201,13 @@ router
 router.route('/settingCommercial/search').get(catchErrors(settingCommercialController.search));
 router.route('/settingCommercial/list').get(catchErrors(settingCommercialController.list));
 router.route('/settingCommercial/filter').get(catchErrors(settingCommercialController.filter));
+
+// // ---------------------------------Api for Socities----------------
+
+router.route('/society/create').post([adminPhotoUpload.single('photo'), setFilePathToBody],catchErrors(societyController.create));
+router.route('/society/list').get(catchErrors(societyController.list));
+router.route('/society/read/:id').get(catchErrors(societyController.read));
+router.route('/society/update/:id').patch(catchErrors(societyController.update));
+router.route('/society/delete/:id').delete(catchErrors(societyController.delete));
 
 module.exports = router;
