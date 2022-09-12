@@ -500,7 +500,7 @@ const Header = () => {
               </div>
               <div className="row">
                 {/* Single category */}
-                <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={150}>
+                <div className="col-xl-3 col-lg-6 col-sm-6" >
                   <div className="small-category-2">
                     <div className="small-category-2-thumb img-1">
                       <a href="properties-full-grid-1.html">
