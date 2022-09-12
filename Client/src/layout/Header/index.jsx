@@ -4,21 +4,21 @@ const Header = () => {
   return (
     <header id="header-container">
       <div id="header">
-        <div class="container container-header">
-          <div class="left-side">
+        <div className="container container-header">
+          <div className="left-side">
             <div id="logo">
               <a href="index.html">
                 <img src="images/logo-red.svg" alt="" />
               </a>
             </div>
-            <div class="mmenu-trigger">
-              <button class="hamburger hamburger--collapse" type="button">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner"></span>
+            <div className="mmenu-trigger">
+              <button className="hamburger hamburger--collapse" type="button">
+                <span className="hamburger-box">
+                  <span className="hamburger-inner" />
                 </span>
               </button>
             </div>
-            <nav id="navigation" class="style-1">
+            <nav id="navigation" className="style-1">
               <ul id="responsive">
                 <li>
                   <a href="#">Home</a>
@@ -361,30 +361,34 @@ const Header = () => {
                 <li>
                   <a href="contact-us.html">Contact</a>
                 </li>
-                <li class="d-none d-xl-none d-block d-lg-block">
+                <li className="d-none d-xl-none d-block d-lg-block">
                   <a href="login.html">Login</a>
                 </li>
-                <li class="d-none d-xl-none d-block d-lg-block">
+                <li className="d-none d-xl-none d-block d-lg-block">
                   <a href="register.html">Register</a>
                 </li>
-                <li class="d-none d-xl-none d-block d-lg-block mt-5 pb-4 ml-5 border-bottom-0">
-                  <a href="add-property.html" class="button border btn-lg btn-block text-center">
-                    Add Listing<i class="fas fa-laptop-house ml-2"></i>
+                <li className="d-none d-xl-none d-block d-lg-block mt-5 pb-4 ml-5 border-bottom-0">
+                  <a
+                    href="add-property.html"
+                    className="button border btn-lg btn-block text-center"
+                  >
+                    Add Listing
+                    <i className="fas fa-laptop-house ml-2" />
                   </a>
                 </li>
               </ul>
             </nav>
           </div>
-          <div class="right-side d-none d-none d-lg-none d-xl-flex">
-            <div class="header-widget">
-              <a href="add-property.html" class="button border">
-                Add Listing<i class="fas fa-laptop-house ml-2"></i>
+          <div className="right-side d-none d-none d-lg-none d-xl-flex">
+            <div className="header-widget">
+              <a href="add-property.html" className="button border">
+                Add Listing
+                <i className="fas fa-laptop-house ml-2" />
               </a>
             </div>
           </div>
-
-          <div class="header-user-menu user-menu add">
-            <div class="header-user-name">
+          <div className="header-user-menu user-menu add">
+            <div className="header-user-name">
               <span>
                 <img src="images/testimonials/ts-1.jpg" alt="" />
               </span>
@@ -408,27 +412,25 @@ const Header = () => {
               </li>
             </ul>
           </div>
-
-          <div class="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">
-            <div class="header-widget sign-in">
-              <div class="show-reg-form modal-open">
+          <div className="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">
+            <div className="header-widget sign-in">
+              <div className="show-reg-form modal-open">
                 <a href="#">Sign In</a>
               </div>
             </div>
           </div>
-
-          <div class="header-user-menu user-menu add d-none d-lg-none d-xl-flex">
-            <div class="lang-wrap">
-              <div class="show-lang">
+          <div className="header-user-menu user-menu add d-none d-lg-none d-xl-flex">
+            <div className="lang-wrap">
+              <div className="show-lang">
                 <span>
-                  <i class="fas fa-globe-americas"></i>
+                  <i className="fas fa-globe-americas" />
                   <strong>ENG</strong>
                 </span>
-                <i class="fa fa-caret-down arrlan"></i>
+                <i className="fa fa-caret-down arrlan" />
               </div>
-              <ul class="lang-tooltip lang-action no-list-style">
+              <ul className="lang-tooltip lang-action no-list-style">
                 <li>
-                  <a href="#" class="current-lan" data-lantext="En">
+                  <a href="#" className="current-lan" data-lantext="En">
                     English
                   </a>
                 </li>
