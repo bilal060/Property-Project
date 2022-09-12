@@ -8,19 +8,21 @@ const societSchema = new mongoose.Schema({
   },
   ownerName: {
     type: String,
-    default: true,
+    // default: false,
   },
   address: {
     type: String,
     trim: true,
- 
   },
   managerName: {
     type: String,
     trim: true,
-   
   },
   Status: {
+    type: String,
+    trim: true,
+  },
+  photo: {
     type: String,
     trim: true,
   },
