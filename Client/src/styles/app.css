@@ -1,5 +1,4 @@
-@import './search.css';
-/* @import './animate.css'; */
+/* @import './search.css';
 @import './aos.css';
 @import './aos2.css';
 @import './magnific-popup.css';
@@ -8,3 +7,35 @@
 @import './menu.css';
 @import './slick.css';
 @import './styles.css';
+
+@import './search.css';
+@import './animate.css';
+@import './aos.css';
+@import './aos2.css';
+@import './magnific-popup.css';
+@import './lightcase.css';
+@import './owl.carousel.min.css';
+@import './bootstrap.min.css';
+@import './menu.css';
+@import './slick.css';
+@import './styles.css';
+@import './maps.css';
+@import './colors/pink.css'; */
+
+@import '../assets/font/flaticon.css';
+@import './fontawesome-all.min.css';
+@import './fontawesome-5-all.min.css';
+@import './font-awesome.min.css';
+@import './search.css';
+@import './animate.css';
+@import './aos.css';
+@import './aos2.css';
+@import './magnific-popup.css';
+@import './lightcase.css';
+@import './owl.carousel.min.css';
+@import './bootstrap.min.css';
+@import './menu.css';
+@import './slick.css';
+@import './styles.css';
+@import './maps.css';
+@import './colors/pink.css';

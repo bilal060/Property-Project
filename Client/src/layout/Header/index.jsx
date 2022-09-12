@@ -14,7 +14,11 @@ const Header = () => {
             <div className="mmenu-trigger">
               <button className="hamburger hamburger--collapse" type="button">
                 <span className="hamburger-box">
+<<<<<<< HEAD
                   <span className="hamburger-inner"></span>
+=======
+                  <span className="hamburger-inner" />
+>>>>>>> a6ceccc9028bc54371deeec9d8f3658905b9a786
                 </span>
               </button>
             </div>
@@ -416,15 +420,14 @@ const Header = () => {
               </div>
             </div>
           </div>
-
           <div className="header-user-menu user-menu add d-none d-lg-none d-xl-flex">
             <div className="lang-wrap">
               <div className="show-lang">
                 <span>
-                  <i className="fas fa-globe-americas"></i>
+                  <i class="fas fa-globe-americas"></i>
                   <strong>ENG</strong>
                 </span>
-                <i className="fa fa-caret-down arrlan"></i>
+                <i class="fa fa-caret-down arrlan"></i>
               </div>
               <ul className="lang-tooltip lang-action no-list-style">
                 <li>
