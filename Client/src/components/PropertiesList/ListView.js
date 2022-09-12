@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-export default function GridView() {
+export default function ListView() {
   return (
     <>
-          <section class="properties-list featured portfolio blog">
+                <section class="properties-list featured portfolio blog">
             <div class="container">
               <section className="headings-2 pt-0 pb-0">
                 <div className="pro-wrapper">
@@ -14,7 +14,7 @@ export default function GridView() {
                           <a href="index.html">Home </a> &nbsp;/&nbsp; <span>Listings</span>
                         </p>
                       </div>
-                      <h3>Grid View</h3>
+                      <h3>List View</h3>
                     </div>
                   </div>
                 </div>
@@ -243,5 +243,5 @@ export default function GridView() {
             </div>
           </section>
     </>
-  );
+  )
 }

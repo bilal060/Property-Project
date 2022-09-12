@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import { selectAuth } from '../redux/auth/selectors';
 // import { useNetworkState } from "react-use";
 import Layout from '../layout';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import UserLayout from '../components/UserProfile/UserLayout';
+import UserRouter from '../router/UserIndex';
+
 function App() {
   // const [isOnline] = useNetwork();
   // // const networkState = useNetworkState();
@@ -22,19 +23,15 @@ function App() {
 
   const { isLoggedIn } = useSelector(selectAuth);
 
-  AOS.init({
-    offset: 200,
-    duration: 800,
-    easing: 'ease-in-out-sine',
-    delay: 200,
-    mirror: true,
-  });
-
   return (
     <>
       <Layout>
         <Router />
       </Layout>
+
+      <UserLayout>
+        <UserRouter/>
+      </UserLayout>
     </>
   );
 }

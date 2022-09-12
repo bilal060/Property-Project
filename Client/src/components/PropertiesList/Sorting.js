@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 export default function Sorting() {
   return (
     <>
-      <section className="headings-2 pt-0">
+            <section className="headings-2 pt-0">
         <div className="pro-wrapper">
           <div className="detail-wrapper-body">
             <div className="listing-title-bar">
@@ -44,5 +44,5 @@ export default function Sorting() {
         </div>
       </section>
     </>
-  );
+  )
 }

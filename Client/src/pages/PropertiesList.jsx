@@ -1,9 +1,10 @@
-import React from 'react';
-import GridView from '../components/PropertiesGrid/GridView';
-import Sorting from '../components/PropertiesGrid/Sorting';
-import Cards from '../components/PropertiesGrid/Cards';
+import React from 'react'
+import ListView from '../components/PropertiesList/ListView'
+import Sorting from '../components/PropertiesList/Sorting'
+import Cards from '../components/PropertiesList/Cards'
 
-export default function PropertiesGrid() {
+
+export default function PropertiesList() {
   return (
     <>
       <div className="inner-pages homepage-4 agents list hp-6 full hd-white">
@@ -11,9 +12,9 @@ export default function PropertiesGrid() {
             <div className="clearfix" />
             <section className="properties-list full featured portfolio blog">
               <div className="container">
-                <GridView/>
+                <ListView/>
                   <Sorting/>
-                    <div className="row">
+                    <div className="row featured portfolio-items">
                       <Cards/>
                     </div>
               </div>
@@ -21,5 +22,5 @@ export default function PropertiesGrid() {
         </div>
       </div>
     </>
-  );
+  )
 }
