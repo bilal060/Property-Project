@@ -3,7 +3,7 @@ import React from 'react';
 export default function Index() {
   return (
     <>
-      <div className="col-md-12 col-xs-12">
+      <div className="col-md-12 col-xs-12 p-2">
         <div className="news-item news-item-sm">
           <a href="agent-details.html" className="news-img-link">
             <div className="news-item-img homes">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Sorting() {
   return (
@@ -33,12 +34,13 @@ export default function Sorting() {
               </select>
             </div>
             <div className="sorting-options">
-              <a href="properties-full-list-1.html" className="change-view-btn lde">
-                <i className="fa fa-th-list"></i>
-              </a>
-              <a href="#" className="change-view-btn active-view-btn">
-                <i className="fa fa-th-large"></i>
-              </a>
+                <Link to="/PropertiesList" className="change-view-btn lde">
+                    <i className="fa fa-th-list" />
+                </Link>
+                <Link to="/PropertiesGrid" className="change-view-btn active-view-btn">
+                    <i className="fa fa-th-large" />
+                </Link>
+                
             </div>
           </div>
         </div>

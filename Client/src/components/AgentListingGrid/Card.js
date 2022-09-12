@@ -3,7 +3,6 @@ import React from 'react';
 export default function Card() {
   return (
     <>
-      <div className="row">
         <div className="item col-lg-6 col-md-6 col-xs-12 landscapes sale">
           <div className="project-single">
             <div className="project-inner project-head">
@@ -92,7 +91,6 @@ export default function Card() {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }

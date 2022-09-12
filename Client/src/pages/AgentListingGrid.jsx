@@ -32,6 +32,8 @@ export default function AgentListingGrid() {
                   <Sorting/>
                     <div className="row">
                       <Card/>
+                      <Card/>
+                      <Card/>
                     </div>
                 </div>
                 <aside className="col-lg-4 col-md-12 car">
