@@ -14,7 +14,6 @@ export default function WhyChooseUs() {
           <div className="row service-1">
             <article
               className="col-lg-3 col-md-6 col-xs-12 serv"
-              
               data-aos-delay={150}
             >
               <div className="serv-flex">
@@ -87,6 +86,10 @@ export default function WhyChooseUs() {
           </div>
         </div>
       </section>
+        <a data-scroll="" href="#wrapper" className="go-up">
+            <i className="fa fa-angle-double-up" aria-hidden="true" />
+        </a>
+
     </>
   );
 }

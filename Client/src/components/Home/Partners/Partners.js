@@ -1,7 +1,43 @@
 import React from 'react';
 
-export default function Partners
-() {
+export default function Partners() {
+  $('.style2').owlCarousel({
+    loop: true,
+    margin: 0,
+    dots: false,
+    autoWidth: false,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    responsive: {
+        0: {
+            items: 2,
+            margin: 20
+        },
+        400: {
+            items: 2,
+            margin: 20
+        },
+        500: {
+            items: 3,
+            margin: 20
+        },
+        768: {
+            items: 4,
+            margin: 20
+        },
+        992: {
+            items: 5,
+            margin: 20
+        },
+        1000: {
+            items: 7,
+            margin: 20
+        }
+    }
+  });
+  
+  
+  
   return (
     <>
       <div className="partners bg-white rec-pro">

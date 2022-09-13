@@ -1,6 +1,38 @@
 import React from 'react';
+import Typed from 'react-typed';
 
 export default function Banner() {
+  $(window).on('scroll load', function () {
+    $("#header.cloned #logo img").attr("src", $('#header #logo img').attr('data-sticky-logo'));
+});
+
+  $(".dropdown-filter").on('click', function () {
+
+    $(".explore__form-checkbox-list").toggleClass("filter-block");
+
+});
+
+
+$('.job_clientSlide').owlCarousel({
+  items: 2,
+  loop: true,
+  margin: 30,
+  autoplay: false,
+  nav: true,
+  smartSpeed: 1000,
+  slideSpeed: 1000,
+  navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+  dots: false,
+  responsive: {
+      0: {
+          items: 1
+      },
+      991: {
+          items: 3
+      }
+  }
+});
+
   return (
     <>
       <section

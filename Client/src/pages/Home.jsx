@@ -7,10 +7,12 @@ import PopularProperties from '../components/Home/PopularProperties/PopularPrope
 import WhyChooseUs from '../components/Home/WhyChooseUs/WhyChooseUs';
 import React from 'react';
 import Partners from '../components/Home/Partners/Partners';
+import Preloader from '../components/Preloader/Preloader';
 
 const Home = () => {
   return (
     <>
+    <Preloader/>
       <div className="homepage-9 hp-6 homepage-1 mh">
         <div id="wrapper">
           <Banner/>

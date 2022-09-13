@@ -6,7 +6,7 @@ export default function Sidebar() {
     <>
         <div className="user-profile-box mb-0">
           <div className="sidebar-header">
-            <img src="images/logo-blue.svg" alt="header-logo2.png" />{' '}
+            <img src="images/logo-blue.svg" alt="header-logo2.png" />
           </div>
           <div className="header clearfix">
             <img
