@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 export default function FeatureProperties() {
   return (
     <>
@@ -22,7 +22,7 @@ export default function FeatureProperties() {
                       <div className="homes-tag button alt featured">Featured</div>
                       <div className="homes-tag button alt sale">For Sale</div>
                       <img
-                        src="images/blog/b-11.jpg"
+                        src={process.env.PUBLIC_URL + "images/blog/b-11.jpg"}
                         alt="home-1"
                         className="img-responsive"
                       />
@@ -103,7 +103,7 @@ export default function FeatureProperties() {
                     <Link to="/propertydetails" className="homes-img">
                       <div className="homes-tag button sale rent">For Rent</div>
                       <img
-                        src="images/blog/b-12.jpg"
+                        src={process.env.PUBLIC_URL + "images/blog/b-12.jpg"}
                         alt="home-1"
                         className="img-responsive"
                       />
@@ -184,7 +184,7 @@ export default function FeatureProperties() {
                     <Link to="/propertydetails" className="homes-img">
                       <div className="homes-tag button alt sale">For Sale</div>
                       <img
-                        src="images/blog/b-1.jpg"
+                        src={process.env.PUBLIC_URL + "images/blog/b-1.jpg"}
                         alt="home-1"
                         className="img-responsive"
                       />
@@ -266,7 +266,7 @@ export default function FeatureProperties() {
                       <div className="homes-tag button alt featured">Featured</div>
                       <div className="homes-tag button sale rent">For Rent</div>
                       <img
-                        src="images/feature-properties/fp-10.jpg"
+                        src={process.env.PUBLIC_URL + "images/feature-properties/fp-10.jpg"}
                         alt="home-1"
                         className="img-responsive"
                       />
@@ -348,7 +348,7 @@ export default function FeatureProperties() {
                       <div className="homes-tag button alt featured">Featured</div>
                       <div className="homes-tag button alt sale">For Sale</div>
                       <img
-                        src="images/feature-properties/fp-11.jpg"
+                        src={process.env.PUBLIC_URL + "images/feature-properties/fp-11.jpg"}
                         alt="home-1"
                         className="img-responsive"
                       />
@@ -429,7 +429,7 @@ export default function FeatureProperties() {
                     <Link to="/propertydetails" className="homes-img">
                       <div className="homes-tag button sale rent">For Rent</div>
                       <img
-                        src="images/feature-properties/fp-12.jpg"
+                        src={process.env.PUBLIC_URL + "images/feature-properties/fp-12.jpg"}
                         alt="home-1"
                         className="img-responsive"
                       />

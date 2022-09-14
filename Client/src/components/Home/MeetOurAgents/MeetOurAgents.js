@@ -9,7 +9,7 @@ export default function MeetOurAgents() {
     dots: false,
     arrows: true,
     adaptiveHeight: true,
-  
+
     responsive: [{
       breakpoint: 1292,
       settings: {
@@ -47,7 +47,7 @@ export default function MeetOurAgents() {
             <p>Our Agents are here to help you</p>
           </div>
           <div className="row team-all">
-  
+
           </div>
           <Slider {...settings}>
             {/*Team Block*/}
@@ -59,7 +59,7 @@ export default function MeetOurAgents() {
               <div className="inner-box team-details">
                 <div className="image team-head">
                   <a href="agents-listing-grid.html">
-                    <img src="images/team/t-5.jpg" alt="" />
+                    <img src={process.env.PUBLIC_URL + "images/team/t-5.jpg"} alt="" />
                   </a>
                   <div className="team-hover">
                     <ul className="team-social">
@@ -103,7 +103,7 @@ export default function MeetOurAgents() {
               <div className="inner-box team-details">
                 <div className="image team-head">
                   <a href="agents-listing-grid.html">
-                    <img src="images/team/t-6.jpg" alt="" />
+                    <img src={process.env.PUBLIC_URL + "images/team/t-6.jpg"} alt="" />
                   </a>
                   <div className="team-hover">
                     <ul className="team-social">
@@ -147,7 +147,7 @@ export default function MeetOurAgents() {
               <div className="inner-box team-details">
                 <div className="image team-head">
                   <a href="agents-listing-grid.html">
-                    <img src="images/team/t-7.jpg" alt="" />
+                    <img src={process.env.PUBLIC_URL + "images/team/t-7.jpg"} alt="" />
                   </a>
                   <div className="team-hover">
                     <ul className="team-social">
@@ -191,7 +191,7 @@ export default function MeetOurAgents() {
               <div className="inner-box team-details">
                 <div className="image team-head">
                   <a href="agents-listing-grid.html">
-                    <img src="images/team/t-8.jpg" alt="" />
+                    <img src={process.env.PUBLIC_URL + "images/team/t-8.jpg"} alt="" />
                   </a>
                   <div className="team-hover">
                     <ul className="team-social">
@@ -234,7 +234,7 @@ export default function MeetOurAgents() {
               <div className="inner-box team-details">
                 <div className="image team-head">
                   <a href="agents-listing-grid.html">
-                    <img src="images/team/team-image-2.jpg" alt="" />
+                    <img src={process.env.PUBLIC_URL + "images/team/team-image-2.jpg"} alt="" />
                   </a>
                   <div className="team-hover">
                     <ul className="team-social">
@@ -277,7 +277,7 @@ export default function MeetOurAgents() {
               <div className="inner-box team-details">
                 <div className="image team-head">
                   <a href="agents-listing-grid.html">
-                    <img src="images/team/team-image-7.jpg" alt="" />
+                    <img src={process.env.PUBLIC_URL + "images/team/team-image-7.jpg"} alt="" />
                   </a>
                   <div className="team-hover">
                     <ul className="team-social">
@@ -313,7 +313,7 @@ export default function MeetOurAgents() {
               </div>
             </div>
           </Slider>
-         
+
         </div>
       </section>
     </>

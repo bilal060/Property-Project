@@ -8,10 +8,8 @@ import ContactUs from '../pages/ContactUs';
 import BlogDetails from '../pages/BlogDetails';
 import ComingSoon from '../pages/ComingSoon';
 import AllProperties from '../pages/AllProperties';
-// import Dashboard from '../pages/Dashboard';
 import AllAgents from '../pages/AllAgents';
 import SingleProperty from '../pages/PropertyDetails';
-import SubmitProperty from '../pages/SubmitProperty';
 import AgentDetails from '../pages/AgentDetails';
 const Router = () => {
   return (
@@ -21,7 +19,6 @@ const Router = () => {
       {/* <Route exact path="/Dashboard" component={Dashboard}/> */}
       <Route exact path="/AllAgents" component={AllAgents} />
       <Route exact path="/propertydetails" component={SingleProperty} />
-      <Route exact path="/SubmitProperty" component={SubmitProperty} />
       <Route exact path="/agentdetails" component={AgentDetails} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
@@ -29,8 +26,6 @@ const Router = () => {
       <Route exact path="/contact" component={ContactUs} />
       <Route exact path="/blog-details" component={BlogDetails} />
       <Route exact path="/coming-soon" component={ComingSoon} />
-
-
     </Switch>
   );
 };

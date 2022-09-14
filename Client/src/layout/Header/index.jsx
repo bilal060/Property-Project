@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const ToggleProfileDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <header id="header-container">
       {/* Header */}
@@ -12,7 +17,7 @@ export default function Header() {
             {/* Logo */}
             <div id="logo">
               <Link to="/">
-                <img src="images/logo.svg" alt="" />
+                <img src={process.env.PUBLIC_URL + 'images/logo.svg'} alt="" />
               </Link>
             </div>
             {/* Mobile Navigation */}
@@ -61,10 +66,16 @@ export default function Header() {
           </div>
           {/* Left Side Content / End */}
           {/* Right Side Content / */}
-          <div className="header-user-menu user-menu">
-            <div className="header-user-name">
+          <div
+            className={
+              showDropdown
+                ? 'header-user-menu user-menu add active'
+                : 'header-user-menu user-menu add'
+            }
+          >
+            <div onClick={() => ToggleProfileDropdown()} className="header-user-name">
               <span>
-                <img src="images/testimonials/ts-1.jpg" alt="" />
+                <img src={process.env.PUBLIC_URL + 'images/testimonials/ts-1.jpg'} alt="" />
               </span>
               Hi, Mary!
             </div>

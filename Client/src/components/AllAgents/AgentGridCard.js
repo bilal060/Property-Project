@@ -10,7 +10,7 @@ export default function AgentGridCard() {
               {/* homes img */}
               <Link to="agentdetails" className="homes-img">
                 <div className="homes-tag button alt featured">3 Listings</div>
-                <img src="images/team/a-1.png" alt="home-1" className="img-responsive" />
+                <img src={process.env.PUBLIC_URL + "images/team/a-1.png"} alt="home-1" className="img-responsive" />
               </Link>
             </div>
           </div>
@@ -38,7 +38,7 @@ export default function AgentGridCard() {
             </div>
             <div className="footer">
               <a href="agent-details.html">
-                <img src="images/partners/1.png" alt="" className="mr-2" /> Company Name
+                <img src={process.env.PUBLIC_URL + "images/partners/1.png"} alt="" className="mr-2" /> Company Name
               </a>
               <span className="view-my-listing">
                 <a href="properties-full-grid-2.html">View My Listings</a>

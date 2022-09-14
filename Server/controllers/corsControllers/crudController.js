@@ -58,7 +58,6 @@ exports.createCRUDController = (modelName, filter = []) => {
 
   if (!filter.includes('getPictureByPath')) {
     crudMethods.getPictureByPath = async (req, res) => {
-      console.log("hfjhjh")
       apiRest.getPictureByPath(Model, req, res);  
     };
   }

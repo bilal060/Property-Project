@@ -10,7 +10,7 @@ export default function AgentInfo() {
         <div className="widget-boxed-body">
           <div className="sidebar-widget author-widget2">
             <div className="author-box clearfix">
-              <img src="images/testimonials/ts-1.jpg" alt="author-image" className="author__img" />
+              <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="author-image" className="author__img" />
               <h4 className="author__title">Lisa Clark</h4>
               <p className="author__meta">Agent of Property</p>
             </div>

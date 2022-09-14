@@ -9,7 +9,7 @@ const Footer = () => {
                         <div className="col-lg-3 col-md-6">
                             <div className="netabout">
                                 <a href="index.html" className="logo">
-                                    <img src="images/logo-footer.svg" alt="netcom" />
+                                    <img src={process.env.PUBLIC_URL + "images/logo-footer.svg"} alt="netcom" />
                                 </a>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
                             </div>

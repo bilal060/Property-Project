@@ -11,7 +11,7 @@ export default function SimilarProperties() {
               <div className="homes-tag button alt featured">Featured</div>
               <div className="homes-tag button alt sale">For Sale</div>
               <div className="homes-price">$9,000/mo</div>
-              <img src="images/blog/b-11.jpg" alt="home-1" className="img-responsive" />
+              <img src={process.env.PUBLIC_URL + "images/blog/b-11.jpg"} alt="home-1" className="img-responsive" />
             </a>
           </div>
           <div className="button-effect">
@@ -62,7 +62,7 @@ export default function SimilarProperties() {
           </ul>
           <div className="footer">
             <a href="agent-details.html">
-              <img src="images/testimonials/ts-1.jpg" alt="" className="mr-2" /> Lisa Jhonson
+              <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" className="mr-2" /> Lisa Jhonson
             </a>
             <span>2 months ago</span>
           </div>

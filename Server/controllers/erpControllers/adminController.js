@@ -186,7 +186,6 @@ exports.read = async (req, res) => {
  */
 
 exports.create = async (req, res) => {
-  console.log(req.body)
   try {
     let { email, password } = req.body;
     if (!email || !password)

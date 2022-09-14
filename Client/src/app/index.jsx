@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import Router from '../router/index'; 
+import Router from '../router/index';
 import { useSelector } from 'react-redux';
 import { selectAuth } from '../redux/auth/selectors';
 // import { useNetworkState } from "react-use";
 import Layout from '../layout';
-import UserLayout from '../components/UserProfile/UserLayout';
-import UserRouter from '../router/UserIndex';
+import UserLayout from '../Dashboard/UserLayout';
+import UserRouter from '../Dashboard/Router';
 
 function App() {
   // const [isOnline] = useNetwork();
@@ -25,13 +25,12 @@ function App() {
 
   return (
     <>
-    
       <Layout>
         <Router />
       </Layout>
 
       {/* <UserLayout>
-        <UserRouter/>
+        <UserRouter />
       </UserLayout> */}
     </>
   );

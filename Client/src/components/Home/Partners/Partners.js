@@ -54,25 +54,25 @@ export default function Partners() {
 
           <OwlCarousel className="owl-theme style-2" {...options} loop margin={10} >
             <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>  <div className="owl-item" >
-              <img src="../../../assets/images/partners/11.jpg" alt="" />
+              <img src="../../../assets/images/partners/11.jpg"} alt="" />
             </div>
           </OwlCarousel>
 
