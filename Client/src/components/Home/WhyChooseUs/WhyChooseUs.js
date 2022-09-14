@@ -14,6 +14,7 @@ export default function WhyChooseUs() {
           <div className="row service-1">
             <article
               className="col-lg-3 col-md-6 col-xs-12 serv"
+              data-aos="fade-up"
               data-aos-delay={150}
             >
               <div className="serv-flex">
@@ -31,7 +32,7 @@ export default function WhyChooseUs() {
             </article>
             <article
               className="col-lg-3 col-md-6 col-xs-12 serv"
-              
+              data-aos="fade-up"
               data-aos-delay={250}
             >
               <div className="serv-flex">
@@ -49,7 +50,7 @@ export default function WhyChooseUs() {
             </article>
             <article
               className="col-lg-3 col-md-6 col-xs-12 serv mb-0 pt"
-              
+              data-aos="fade-up"
               data-aos-delay={350}
             >
               <div className="serv-flex arrow">
@@ -67,7 +68,7 @@ export default function WhyChooseUs() {
             </article>
             <article
               className="col-lg-3 col-md-6 col-xs-12 serv mb-0 pt its-2"
-              
+              data-aos="fade-up"
               data-aos-delay={450}
             >
               <div className="serv-flex">
@@ -86,10 +87,6 @@ export default function WhyChooseUs() {
           </div>
         </div>
       </section>
-        <a data-scroll="" href="#wrapper" className="go-up">
-            <i className="fa fa-angle-double-up" aria-hidden="true" />
-        </a>
-
     </>
   );
 }

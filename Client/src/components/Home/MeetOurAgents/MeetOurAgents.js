@@ -15,7 +15,7 @@ export default function MeetOurAgents() {
             {/*Team Block*/}
             <div
               className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2"
-              
+              data-aos="fade-up"
               data-aos-delay={150}
             >
               <div className="inner-box team-details">
@@ -59,7 +59,7 @@ export default function MeetOurAgents() {
             {/*Team Block*/}
             <div
               className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2"
-              
+              data-aos="fade-up"
               data-aos-delay={250}
             >
               <div className="inner-box team-details">
@@ -103,7 +103,7 @@ export default function MeetOurAgents() {
             {/*Team Block*/}
             <div
               className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2"
-              
+              data-aos="fade-up"
               data-aos-delay={350}
             >
               <div className="inner-box team-details">
@@ -147,7 +147,7 @@ export default function MeetOurAgents() {
             {/*Team Block*/}
             <div
               className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none"
-              
+              data-aos="fade-up"
               data-aos-delay={450}
             >
               <div className="inner-box team-details">
@@ -190,7 +190,7 @@ export default function MeetOurAgents() {
             </div>
             <div
               className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none"
-              
+              data-aos="fade-up"
               data-aos-delay={550}
             >
               <div className="inner-box team-details">
@@ -233,7 +233,7 @@ export default function MeetOurAgents() {
             </div>
             <div
               className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none"
-              
+              data-aos="fade-up"
               data-aos-delay={650}
             >
               <div className="inner-box team-details">

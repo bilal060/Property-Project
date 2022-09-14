@@ -12,7 +12,8 @@ export default function PopularPlaces() {
             <p>Properties In Most Popular Places.</p>
           </div>
           <div className="row">
-            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos-delay={150}>
+            {/* Single category */}
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={150}>
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-1">
                   <a href="properties-full-grid-1.html">
@@ -28,7 +29,7 @@ export default function PopularPlaces() {
               </div>
             </div>
             {/* Single category */}
-            <div className="col-xl-3 col-lg-6 col-sm-6"  data-aos-delay={250}>
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={250}>
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-2">
                   <a href="properties-full-grid-1.html">
@@ -44,7 +45,7 @@ export default function PopularPlaces() {
               </div>
             </div>
             {/* Single category */}
-            <div className="col-xl-3 col-lg-6 col-sm-6"  data-aos-delay={350}>
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={350}>
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-3">
                   <a href="properties-full-grid-1.html">
@@ -60,7 +61,7 @@ export default function PopularPlaces() {
               </div>
             </div>
             {/* Single category */}
-            <div className="col-xl-3 col-lg-6 col-sm-6"  data-aos-delay={450}>
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={450}>
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-3">
                   <a href="properties-full-grid-1.html">
@@ -76,7 +77,7 @@ export default function PopularPlaces() {
               </div>
             </div>
             {/* Single category */}
-            <div className="col-xl-3 col-lg-6 col-sm-6"  data-aos-delay={150}>
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={150}>
               <div className="small-category-2 mob-mt">
                 <div className="small-category-2-thumb img-8">
                   <a href="properties-full-grid-1.html">
@@ -92,7 +93,7 @@ export default function PopularPlaces() {
               </div>
             </div>
             {/* Single category */}
-            <div className="col-xl-3 col-lg-6 col-sm-6"  data-aos-delay={250}>
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={250}>
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-10">
                   <a href="properties-full-grid-1.html">
@@ -108,7 +109,7 @@ export default function PopularPlaces() {
               </div>
             </div>
             {/* Single category */}
-            <div className="col-xl-3 col-lg-6 col-sm-6"  data-aos-delay={350}>
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={350}>
               <div className="small-category-2 si-mt">
                 <div className="small-category-2-thumb img-11">
                   <a href="properties-full-grid-1.html">
@@ -124,7 +125,7 @@ export default function PopularPlaces() {
               </div>
             </div>
             {/* Single category */}
-            <div className="col-xl-3 col-lg-6 col-sm-6"  data-aos-delay={450}>
+            <div className="col-xl-3 col-lg-6 col-sm-6" data-aos="fade-up" data-aos-delay={450}>
               <div className="small-category-2 no-mb si-mt">
                 <div className="small-category-2-thumb img-11">
                   <a href="properties-full-grid-1.html">
