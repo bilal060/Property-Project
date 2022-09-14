@@ -1,7 +1,7 @@
 import React from 'react';
-import GridView from '../components/PropertiesGrid/GridView';
-import Sorting from '../components/PropertiesGrid/Sorting';
-import Cards from '../components/PropertiesGrid/Cards';
+import GridView from '../components/propertiesGrid/GridView';
+import Sorting from '../components/propertiesGrid/Sorting';
+import Cards from '../components/propertiesGrid/Cards';
 
 export default function PropertiesGrid() {
   return (

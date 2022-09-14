@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleCard from '../PropertiesGrid/SingleCard';
+import SingleCard from '../propertiesGrid/SingleCard';
 
 export default function SimilarProperties() {
   return (
