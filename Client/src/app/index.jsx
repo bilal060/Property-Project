@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Router from '../router/index';
+import Router from '../router/index'; 
 import { useSelector } from 'react-redux';
 import { selectAuth } from '../redux/auth/selectors';
 // import { useNetworkState } from "react-use";
@@ -25,6 +25,7 @@ function App() {
 
   return (
     <>
+    
       <Layout>
         <Router />
       </Layout>
