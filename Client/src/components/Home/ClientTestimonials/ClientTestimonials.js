@@ -38,7 +38,7 @@ export default function ClientTestimonials() {
                 <p>Los Angeles</p>
               </div>
             </div>
-            <div className="singleJobClinet" data-aos="zoom-in" data-aos-delay={350}>
+            <div className="singleJobClinet" data-aos="zoom-in"data-aos-delay={350}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore gna a. Ut enim ad minim veniam,
