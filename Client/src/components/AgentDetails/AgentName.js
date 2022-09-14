@@ -9,7 +9,7 @@ export default function AgentName() {
             <div className="listing-title-bar">
               <div className="text-heading text-left">
                 <p>
-                  <a href="index.html">Home </a> &nbsp;/&nbsp; <span>Agent Single</span>
+                  <a href="index.html">Home </a> &nbsp;/&nbsp; <span>Agent Details</span>
                 </p>
               </div>
               <h3>Carls Jhons</h3>

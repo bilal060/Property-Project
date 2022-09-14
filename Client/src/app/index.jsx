@@ -29,9 +29,9 @@ function App() {
         <Router />
       </Layout>
 
-      <UserLayout>
+      {/* <UserLayout>
         <UserRouter/>
-      </UserLayout>
+      </UserLayout> */}
     </>
   );
 }

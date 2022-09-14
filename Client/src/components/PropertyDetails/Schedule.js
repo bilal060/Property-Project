@@ -1,5 +1,5 @@
 import React from 'react';
-import Schedule from '../AgentListingGrid/Schedule'
+import Schedule from '../AllAgents/Schedule'
 export default function Index() {
   return (
     <>

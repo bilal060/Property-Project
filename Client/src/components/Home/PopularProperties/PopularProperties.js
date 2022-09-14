@@ -1,6 +1,39 @@
 import React from 'react';
-
+import Slider from "react-slick";
 export default function PopularProperties() {
+  const settings = {
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    adaptiveHeight: true,
+    responsive: [{
+      breakpoint: 1292,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        arrows: false
+      }
+    }, {
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        arrows: false
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false
+      }
+    }]
+  }
   return (
     <>
       <section className="featured portfolio rec-pro disc">
@@ -12,7 +45,8 @@ export default function PopularProperties() {
             <p>We provide full service at every step.</p>
           </div>
           <div className="portfolio col-xl-12">
-            <div className="slick-lancers">
+
+            <Slider {...settings}>
               <div className="agents-grid" data-aos="fade-up" data-aos-delay={150}>
                 <div className="landscapes">
                   <div className="project-single">
@@ -644,7 +678,8 @@ export default function PopularProperties() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Slider>
+
           </div>
         </div>
       </section>

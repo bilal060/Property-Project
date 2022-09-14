@@ -1,16 +1,15 @@
 import AgentName from '../components/AgentDetails/AgentName';
 import ContactAgent from '../components/AgentDetails/ContactAgent';
-import Schedule from '../components/SingleProperty/Schedule';
-import AddReview from '../components/SingleProperty/AddReview';
-import Description from '../components/SingleProperty/Description';
-import FeatureProperties from '../components/SingleProperty/FeatureProperties';
-import RecentProperties from '../components/SingleProperty/RecentProperties';
-import Reviews from '../components/SingleProperty/Reviews';
+import Schedule from '../components/PropertyDetails/Schedule';
+import AddReview from '../components/PropertyDetails/AddReview';
+import Description from '../components/PropertyDetails/Description';
+import FeatureProperties from '../components/PropertyDetails/FeatureProperties';
+import RecentProperties from '../components/PropertyDetails/RecentProperties';
+import Reviews from '../components/PropertyDetails/Reviews';
 import SimilarProperties from '../components/AgentDetails/SimilarProperties';
-import Special from '../components/SingleProperty/Special';
-import Index from '../components/AgentListingRow/AgentListingRow';
+import Special from '../components/PropertyDetails/Special';
 import React from 'react';
-
+import AgentListCard from '../components/AllAgents/AgentListCard';
 export default function AgentDetails() {
   return (
     <>
@@ -22,26 +21,52 @@ export default function AgentDetails() {
                 <div className="col-lg-8 col-md-12 col-xs-12">
                   <div className="row">
                     <div className="col-md-12 col-xs-12">
-                      <AgentName/>
-                      <Index/>
+                      <AgentName />
+                      <AgentListCard />
                     </div>
                   </div>
                   <div className="blog-pots py-0">
-                    <Description/>
-                    <SimilarProperties/>
-                    <Reviews/>
-                    <AddReview/>
+                    <Description />
+                    <div className="row">
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                      <div className="col-md-6 mb-3">
+                        <SimilarProperties />
+                      </div>
+                    </div>
+
+                    <Reviews />
+                    <AddReview />
                   </div>
                 </div>
                 <aside className="col-lg-4 col-md-12 car">
                   <div className="single widget">
-                    <Schedule/>
+                    <Schedule />
                     <div className="sidebar">
-                      <ContactAgent/>
+                      <ContactAgent />
                       <div className="main-search-field-2">
-                        <RecentProperties/>
-                        <FeatureProperties/>
-                        <Special/>
+                        <RecentProperties />
+                        <FeatureProperties />
+                        <Special />
                       </div>
                     </div>
                   </div>

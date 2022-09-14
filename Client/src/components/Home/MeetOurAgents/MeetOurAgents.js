@@ -1,6 +1,41 @@
 import React from 'react';
+import Slider from 'react-slick';
 
 export default function MeetOurAgents() {
+  const settings = {
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    adaptiveHeight: true,
+  
+    responsive: [{
+      breakpoint: 1292,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        arrows: false
+      }
+    }, {
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        dots: true,
+        arrows: false
+      }
+    }, {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false
+      }
+    }]
+  }
   return (
     <>
       <section className="team bg-white rec-pro">
@@ -12,9 +47,12 @@ export default function MeetOurAgents() {
             <p>Our Agents are here to help you</p>
           </div>
           <div className="row team-all">
+  
+          </div>
+          <Slider {...settings}>
             {/*Team Block*/}
             <div
-              className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2"
+              className="team-block "
               data-aos="fade-up"
               data-aos-delay={150}
             >
@@ -58,7 +96,7 @@ export default function MeetOurAgents() {
             </div>
             {/*Team Block*/}
             <div
-              className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2"
+              className="team-block "
               data-aos="fade-up"
               data-aos-delay={250}
             >
@@ -102,7 +140,7 @@ export default function MeetOurAgents() {
             </div>
             {/*Team Block*/}
             <div
-              className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2"
+              className="team-block "
               data-aos="fade-up"
               data-aos-delay={350}
             >
@@ -146,7 +184,7 @@ export default function MeetOurAgents() {
             </div>
             {/*Team Block*/}
             <div
-              className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none"
+              className="team-block  pb-none"
               data-aos="fade-up"
               data-aos-delay={450}
             >
@@ -189,7 +227,7 @@ export default function MeetOurAgents() {
               </div>
             </div>
             <div
-              className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none"
+              className="team-block  pb-none"
               data-aos="fade-up"
               data-aos-delay={550}
             >
@@ -232,7 +270,7 @@ export default function MeetOurAgents() {
               </div>
             </div>
             <div
-              className="team-block col-sm-6 col-md-4 col-lg-4 col-xl-2 pb-none"
+              className="team-block  pb-none"
               data-aos="fade-up"
               data-aos-delay={650}
             >
@@ -274,7 +312,8 @@ export default function MeetOurAgents() {
                 </div>
               </div>
             </div>
-          </div>
+          </Slider>
+         
         </div>
       </section>
     </>

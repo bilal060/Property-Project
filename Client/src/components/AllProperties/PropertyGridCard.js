@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SingleCard(props) {
+export default function PropertyGridCard(props) {
   return (
     <>
       <div className="item col-lg-4 col-md-6 col-xs-12 landscapes sale">
