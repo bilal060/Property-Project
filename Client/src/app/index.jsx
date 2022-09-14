@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import { selectAuth } from '../redux/auth/selectors';
 // import { useNetworkState } from "react-use";
 import Layout from '../layout';
+import UserLayout from '../components/UserProfile/UserLayout';
+import UserRouter from '../router/UserIndex';
 
 function App() {
   // const [isOnline] = useNetwork();
@@ -24,9 +26,12 @@ function App() {
   return (
     <>
       <Layout>
-        
         <Router />
       </Layout>
+
+      <UserLayout>
+        <UserRouter/>
+      </UserLayout>
     </>
   );
 }

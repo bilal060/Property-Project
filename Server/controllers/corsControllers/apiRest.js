@@ -78,7 +78,7 @@ exports.create = async (Model, req, res) => {
 /**
  *  Updates a Single document
  *  @param {object, string} (req.body, req.params.id)
- *  @returns {Document} Returns updated document
+ *  @returns {File} Returns updated document
  */
 
 exports.update = async (Model, req, res) => {
@@ -391,5 +391,36 @@ exports.getFilterbyDate = async (Model, req, res) => {
       message: 'Oops there is an Error',
       error: err,
     });
+  }
+};
+
+/**
+ *  Getting documents with filters
+ *  @param {String} req.params.path
+ *  @returns {Document} List of Documents
+ */
+exports.getPictureByPath = async (Model, req, res) => {
+  try {
+    return res.sendFile(`public/uploads/user/${req.params.path}`, {
+      root: process.cwd().split('/').slice(-1)[0],
+    });
+  } catch (err) {
+    // If err is thrown by Mongoose due to required validations
+    if (err.name == 'ValidationError') {
+      return res.status(400).json({
+        success: false,
+        result: null,
+        message: 'Required fields are not supplied',
+        error: err,
+      });
+    } else {
+      // Server Error
+      return res.status(500).json({
+        success: false,
+        result: null,
+        message: 'Oops there is an Error',
+        error: err,
+      });
+    }
   }
 };
