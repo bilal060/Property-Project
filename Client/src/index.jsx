@@ -7,6 +7,12 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init({
+  duration: 1200,
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

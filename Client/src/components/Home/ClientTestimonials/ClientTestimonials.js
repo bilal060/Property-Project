@@ -1,4 +1,7 @@
 import React from 'react';
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 export default function ClientTestimonials() {
   return (
@@ -11,7 +14,8 @@ export default function ClientTestimonials() {
             </h2>
             <p>We collect reviews from our customers.</p>
           </div>
-          <div className="owl-carousel job_clientSlide">
+
+          <OwlCarousel className="owl-theme" loop margin={10} >
             <div className="singleJobClinet" data-aos-delay={150}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -24,73 +28,57 @@ export default function ClientTestimonials() {
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
               </div>
-            </div>
-            <div className="singleJobClinet" data-aos-delay={250}>
+            </div> <div className="singleJobClinet" data-aos-delay={150}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore gna a. Ut enim ad minim veniam,
               </p>
               <div className="detailJC">
                 <span>
-                  <img src="images/testimonials/ts-2.jpg" alt="" />
+                  <img src="images/testimonials/ts-1.jpg" alt="" />
                 </span>
-                <h5>Jhon Morris</h5>
-                <p>Los Angeles</p>
+                <h5>Lisa Smith</h5>
+                <p>New York</p>
               </div>
-            </div>
-            <div className="singleJobClinet" data-aos-delay={350}>
+            </div> <div className="singleJobClinet" data-aos-delay={150}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore gna a. Ut enim ad minim veniam,
               </p>
               <div className="detailJC">
                 <span>
-                  <img src="images/testimonials/ts-3.jpg" alt="" />
+                  <img src="images/testimonials/ts-1.jpg" alt="" />
                 </span>
-                <h5>Mary Deshaw</h5>
-                <p>Chicago</p>
+                <h5>Lisa Smith</h5>
+                <p>New York</p>
               </div>
-            </div>
-            <div className="singleJobClinet">
+            </div> <div className="singleJobClinet" data-aos-delay={150}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore gna a. Ut enim ad minim veniam,
               </p>
               <div className="detailJC">
                 <span>
-                  <img src="images/testimonials/ts-4.jpg" alt="" />
+                  <img src="images/testimonials/ts-1.jpg" alt="" />
                 </span>
-                <h5>Gary Steven</h5>
-                <p>Philadelphia</p>
+                <h5>Lisa Smith</h5>
+                <p>New York</p>
               </div>
-            </div>
-            <div className="singleJobClinet">
+            </div> <div className="singleJobClinet" data-aos-delay={150}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore gna a. Ut enim ad minim veniam,
               </p>
               <div className="detailJC">
                 <span>
-                  <img src="images/testimonials/ts-5.jpg" alt="" />
+                  <img src="images/testimonials/ts-1.jpg" alt="" />
                 </span>
-                <h5>Cristy Mayer</h5>
-                <p>San Francisco</p>
+                <h5>Lisa Smith</h5>
+                <p>New York</p>
               </div>
             </div>
-            <div className="singleJobClinet">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore gna a. Ut enim ad minim veniam,
-              </p>
-              <div className="detailJC">
-                <span>
-                  <img src="images/testimonials/ts-6.jpg" alt="" />
-                </span>
-                <h5>Ichiro Tasaka</h5>
-                <p>Houston</p>
-              </div>
-            </div>
-          </div>
+          </OwlCarousel>
+
         </div>
       </section>
     </>
