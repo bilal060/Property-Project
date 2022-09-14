@@ -8,6 +8,7 @@ import AgentListingGrid from '../pages/AgentListingGrid';
 import AgentListingRow from '../pages/AgentListingRow';
 import SingleProperty from '../pages/SingleProperty';
 import SubmitProperty from '../pages/SubmitProperty';
+import AgentDetails from '../pages/AgentDetails';
 const Router = () => {
   return (
     <Switch>
@@ -19,6 +20,8 @@ const Router = () => {
       <Route exact path="/AgentListingRow" component={AgentListingRow}/>
       <Route exact path="/SingleProperty" component={SingleProperty}/>
       <Route exact path="/SubmitProperty" component={SubmitProperty}/>
+      <Route exact path="/AgentDetails" component={AgentDetails}/>
+
     </Switch>
   );
 };

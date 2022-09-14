@@ -12,7 +12,7 @@ import Preloader from '../components/Preloader/Preloader';
 const Home = () => {
   return (
     <>
-    <Preloader/>
+    {/* <Preloader/> */}
       <div className="homepage-9 hp-6 homepage-1 mh">
         <div id="wrapper">
           <Banner/>
