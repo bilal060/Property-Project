@@ -38,7 +38,7 @@ export default function Banner() {
         data-stellar-background-ratio="0.5"
       >
         <div className="hero-main">
-          <div className="container">
+          <div className="container" data-aos="zoom-in">
             <div className="row">
               <div className="col-12">
                 <div className="hero-inner">
