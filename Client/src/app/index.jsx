@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Router from '../router/index';
 import { useSelector } from 'react-redux';
-import { selectAuth } from '../redux/auth/selectors';
 // import { useNetworkState } from "react-use";
 import Layout from '../layout';
 import UserLayout from '../Dashboard/UserLayout';
@@ -20,8 +19,6 @@ function App() {
   //     description: "Cannot connect to the server, Check your internet network",
   //   });
   // }
-
-  const { isLoggedIn } = useSelector(selectAuth);
 
   return (
     <>

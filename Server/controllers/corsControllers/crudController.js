@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 exports.createCRUDController = (modelName, filter = []) => {
   const Model = mongoose.model(modelName);
   let crudMethods = {};
-
   // if (!filter.includes('create')) {
   //   console.log("hgh",filter.includes('create'))
   //   crudMethods.create = async (req, res) => {
@@ -58,7 +57,7 @@ exports.createCRUDController = (modelName, filter = []) => {
 
   if (!filter.includes('getPictureByPath')) {
     crudMethods.getPictureByPath = async (req, res) => {
-      apiRest.getPictureByPath(Model, req, res);  
+      apiRest.getPictureByPath(Model, req, res);
     };
   }
   return crudMethods;

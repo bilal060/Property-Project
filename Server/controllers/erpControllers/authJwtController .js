@@ -21,7 +21,6 @@ exports.login = async (req, res) => {
       });
 
     const admin = await Admin.findOne({ email: email, removed: false });
-    // console.log(admin);
     if (!admin)
       return res.status(400).json({
         success: false,
@@ -54,7 +53,7 @@ exports.login = async (req, res) => {
     ).exec();
 
     res.cookie('token', token, {
-      maxAge: req.body.remember ? 72 * 60 * 60 * 1000 : 60 * 60 * 1000, // Cookie expires after 30 days
+      maxAge: req.body.remember ? 72 * 60 * 60 * 1000 : 60 * 60 * 1000,
       sameSite: 'none',
       httpOnly: true,
       secure: true,
