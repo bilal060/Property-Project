@@ -12,7 +12,7 @@ export const registerValidationSchema = Yup.object().shape({
     firstName: Yup.string().min(3, 'Minimum Length Should Be 3').required('First Name is Required'),
     lastName: Yup.string().min(3, 'Minimum Length Should Be 3').required('Last Name is Required'),
     email: Yup.string().email('Enter valid email').required('Email is Required'),
-    userType: Yup.string().oneOf(['Customer', 'Agent'], 'Required').required('Select User Type'),
+    userType: Yup.string().oneOf(['customer', 'agent'], 'Required').required('Select User Type'),
     password: Yup.string()
         .min(8, 'Password minimum length should be 8')
         .required('Password is Required'),

@@ -12,10 +12,12 @@ const helpers = require('./helpers');
 
 const erpApiRouter = require('./routes/erpRoutes/erpApi');
 const erpAuthRouter = require('./routes/erpRoutes/erpAuth');
+const agentRouter = require('./routes/agentRoutes/agentRoutes');
+
 
 const errorHandlers = require('./handlers/errorHandlers');
 
-const { isValidAdminToken } = require('./controllers/erpControllers/authJwtController ');
+const { isValidAdminToken, isValidAgent } = require('./middlewares/Authentication');
 
 // create our Express app
 const app = express();
@@ -73,14 +75,14 @@ app.use(
 
 app.use(
   '/api',
-  cors({
-    origin: true,
-    credentials: true,
-  }),
-  isValidAdminToken,
   erpApiRouter
 );
 
+
+app.use(
+  '/api/agent',
+  agentRouter
+);
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
 

@@ -17,7 +17,7 @@ function Login() {
     email: '',
     password: '',
     rememberMe: false,
-    userType: 'Customer',
+    userType: 'customer',
   };
   return (
     <div className="inner-pages">
@@ -91,7 +91,7 @@ function Login() {
                         checked
                         id="customRadioInline1"
                         name="userType"
-                        value="Customer"
+                        value="customer"
                         className="custom-control-input"
                       />
                       <label className="custom-control-label" htmlFor="customRadioInline1">
@@ -103,7 +103,7 @@ function Login() {
                         type="radio"
                         id="customRadioInline2"
                         name="userType"
-                        value="Agent"
+                        value="agent"
                         className="custom-control-input"
                       />
                       <label className="custom-control-label" htmlFor="customRadioInline2">

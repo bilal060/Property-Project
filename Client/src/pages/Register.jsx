@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 function Register() {
   const onSubmit = (values, props) => {
-    console.log(values);
+    console.log(JSON.stringify(values));
     console.log(props);
     setTimeout(() => {
       props.resetForm();
@@ -19,7 +19,7 @@ function Register() {
     email: '',
     password: '',
     confirmPassword: '',
-    userType: 'Customer',
+    userType: 'customer',
   };
 
   return (
@@ -121,7 +121,7 @@ function Register() {
                         checked
                         id="customRadioInline1"
                         name="userType"
-                        value="Customer"
+                        value="customer"
                         className="custom-control-input"
                       />
                       <label className="custom-control-label" htmlFor="customRadioInline1">
@@ -133,7 +133,7 @@ function Register() {
                         type="radio"
                         id="customRadioInline2"
                         name="userType"
-                        value="Agent"
+                        value="agent"
                         className="custom-control-input"
                       />
                       <label className="custom-control-label" htmlFor="customRadioInline2">

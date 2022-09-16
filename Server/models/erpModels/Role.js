@@ -17,12 +17,13 @@ const roleSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-  dashboardType: {
+  roleType: {
     type: String,
+    lowercase: true,
     trim: true,
+    required: true,
+
   },
-  authorizedPages: [{ type: String, lowercase: true, trim: true }],
-  permissions: [{ type: mongoose.Schema.ObjectId, ref: 'Permission' }],
   created: {
     type: Date,
     default: Date.now,
