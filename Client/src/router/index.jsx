@@ -11,6 +11,7 @@ import AllProperties from '../pages/AllProperties';
 import AllAgents from '../pages/AllAgents';
 import SingleProperty from '../pages/PropertyDetails';
 import AgentDetails from '../pages/AgentDetails';
+import { AuthRoutes } from '../utils/ProtectedRoutes';
 const Router = () => {
   return (
     <Switch>
@@ -20,8 +21,8 @@ const Router = () => {
       <Route exact path="/AllAgents" component={AllAgents} />
       <Route exact path="/propertydetails" component={SingleProperty} />
       <Route exact path="/agentdetails" component={AgentDetails} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
+      <AuthRoutes exact path="/login" component={Login} />
+      <AuthRoutes exact path="/register" component={Register} />
       <Route exact path="/faq" component={Faq} />
       <Route exact path="/contact" component={ContactUs} />
       <Route exact path="/blog-details" component={BlogDetails} />

@@ -9,7 +9,7 @@ export default function Review() {
           <div className="reviews">
             <div className="review">
               <div className="thumb">
-                <img className="img-fluid" src={process.env.PUBLIC_URL + "images/testimonials/ts-4.jpg"} alt="" />
+                <img className="img-fluid" src={process.env.PUBLIC_URL + "/images/testimonials/ts-4.jpg"} alt="" />
               </div>
               <div className="body">
                 <h5>Family House</h5>
@@ -54,7 +54,7 @@ export default function Review() {
             </div>
             <div className="review">
               <div className="thumb">
-                <img className="img-fluid" src={process.env.PUBLIC_URL + "images/testimonials/ts-5.jpg"} alt="" />
+                <img className="img-fluid" src={process.env.PUBLIC_URL + "/images/testimonials/ts-5.jpg"} alt="" />
               </div>
               <div className="body">
                 <h5>Bay Apartment</h5>
@@ -99,7 +99,7 @@ export default function Review() {
             </div>
             <div className="review">
               <div className="thumb">
-                <img className="img-fluid" src={process.env.PUBLIC_URL + "images/testimonials/ts-6.jpg"} alt="" />
+                <img className="img-fluid" src={process.env.PUBLIC_URL + "/images/testimonials/ts-6.jpg"} alt="" />
               </div>
               <div className="body">
                 <h5>Family House Villa</h5>

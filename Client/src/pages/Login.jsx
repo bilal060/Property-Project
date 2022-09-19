@@ -1,23 +1,30 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { DataEncryption, loginValidationSchema } from '../utils';
+import { userLoginApi } from '../store/api';
+import { useDispatch } from 'react-redux';
+import { loginAction } from '../store/actions';
 
 function Login() {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const onSubmit = (values, props) => {
-    console.log(values);
-    console.log(props);
-    setTimeout(() => {
-      props.resetForm();
-      props.setSubmitting(false);
-    }, 2000);
+    userLoginApi(values)
+      .then((response) => {
+        localStorage.setItem('token', response?.data?.result?.token);
+        history.push('/');
+        dispatch(loginAction(response.data.result));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const initialValues = {
     email: '',
     password: '',
     rememberMe: false,
-    userType: 'customer',
   };
   return (
     <div className="inner-pages">
@@ -82,35 +89,6 @@ function Login() {
                   />
                   <i className="icon_lock_alt" />
                   <ErrorMessage component="div" name="password" className="invalid-feedback" />
-                </div>
-                <div className="row mb-2 form-group">
-                  <div className="col-12">
-                    <div className="custom-control custom-radio custom-control-inline float-left">
-                      <Field
-                        type="radio"
-                        checked
-                        id="customRadioInline1"
-                        name="userType"
-                        value="customer"
-                        className="custom-control-input"
-                      />
-                      <label className="custom-control-label" htmlFor="customRadioInline1">
-                        Customer
-                      </label>
-                    </div>
-                    <div className="custom-control custom-radio custom-control-inline float-right">
-                      <Field
-                        type="radio"
-                        id="customRadioInline2"
-                        name="userType"
-                        value="agent"
-                        className="custom-control-input"
-                      />
-                      <label className="custom-control-label" htmlFor="customRadioInline2">
-                        Agent
-                      </label>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="fl-wrap filter-tags clearfix add_bottom_30">

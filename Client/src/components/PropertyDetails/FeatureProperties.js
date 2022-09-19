@@ -69,7 +69,7 @@ export default function FeatureProperties() {
                     </li>
                   </ul>
                 </div>
-                <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-1.jpg"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-1.jpg"} alt="" />
               </a>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function FeatureProperties() {
                     </li>
                   </ul>
                 </div>
-                <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-2.jpg"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-2.jpg"} alt="" />
               </a>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function FeatureProperties() {
                     </li>
                   </ul>
                 </div>
-                <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-3.jpg"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-3.jpg"} alt="" />
               </a>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function FeatureProperties() {
                     </li>
                   </ul>
                 </div>
-                <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-4.jpg"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-4.jpg"} alt="" />
               </a>
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function FeatureProperties() {
                     </li>
                   </ul>
                 </div>
-                <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-5.jpg"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-5.jpg"} alt="" />
               </a>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function FeatureProperties() {
                     </li>
                   </ul>
                 </div>
-                <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-6.jpg"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-6.jpg"} alt="" />
               </a>
             </div>
           </div>

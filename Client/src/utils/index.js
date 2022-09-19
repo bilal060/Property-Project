@@ -30,5 +30,4 @@ export const loginValidationSchema = Yup.object().shape({
         .min(8, 'Password minimum length should be 8')
         .required('Password is Required'),
     rememberMe: Yup.boolean().oneOf([true, false], 'Required').required('Select User Type'),
-    // userType: Yup.string().oneOf(['Customer', 'Agent'], 'Required').required('Select User Type'),
 });

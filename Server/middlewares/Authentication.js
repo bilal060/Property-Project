@@ -7,8 +7,7 @@ require('dotenv').config({ path: '.variables.env' });
 
 exports.isValidAdminToken = async (req, res, next) => {
     try {
-        const token = req.cookies.token;
-
+        const token = req.header("Authorization");
         if (!token)
             return res.status(401).json({
                 success: false,
@@ -62,8 +61,7 @@ exports.isValidAdminToken = async (req, res, next) => {
 
 exports.isValidAgent = async (req, res, next) => {
     try {
-        const token = req.cookies.token;
-
+        const token = req.header("Authorization");
         if (!token)
             return res.status(401).json({
                 success: false,

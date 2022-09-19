@@ -3,7 +3,6 @@ import React from 'react';
 export default function UserProperties() {
   return (
     <div className="col-lg-9 col-md-12 col-xs-12 pl-0 mt-2 user-dash2">
-    
       <div className="my-properties">
         <table className="table-responsive">
           <thead>
@@ -21,7 +20,7 @@ export default function UserProperties() {
                 <a href="single-property-1.html">
                   <img
                     alt="my-properties-3"
-                    src={process.env.PUBLIC_URL + "images/feature-properties/fp-1.jpg"}
+                    src={process.env.PUBLIC_URL + '/images/feature-properties/fp-1.jpg'}
                     className="img-fluid"
                   />
                 </a>
@@ -71,7 +70,7 @@ export default function UserProperties() {
                 <a href="single-property-1.html">
                   <img
                     alt="my-properties-3"
-                    src={process.env.PUBLIC_URL + "images/feature-properties/fp-2.jpg"}
+                    src={process.env.PUBLIC_URL + '/images/feature-properties/fp-2.jpg'}
                     className="img-fluid"
                   />
                 </a>
@@ -121,7 +120,7 @@ export default function UserProperties() {
                 <a href="single-property-1.html">
                   <img
                     alt="my-properties-3"
-                    src={process.env.PUBLIC_URL + "images/feature-properties/fp-3.jpg"}
+                    src={process.env.PUBLIC_URL + '/images/feature-properties/fp-3.jpg'}
                     className="img-fluid"
                   />
                 </a>
@@ -171,7 +170,7 @@ export default function UserProperties() {
                 <a href="single-property-1.html">
                   <img
                     alt="my-properties-3"
-                    src={process.env.PUBLIC_URL + "images/feature-properties/fp-4.jpg"}
+                    src={process.env.PUBLIC_URL + '/images/feature-properties/fp-4.jpg'}
                     className="img-fluid"
                   />
                 </a>
@@ -221,7 +220,7 @@ export default function UserProperties() {
                 <a href="single-property-1.html">
                   <img
                     alt="my-properties-3"
-                    src={process.env.PUBLIC_URL + "images/feature-properties/fp-5.jpg"}
+                    src={process.env.PUBLIC_URL + '/images/feature-properties/fp-5.jpg'}
                     className="img-fluid"
                   />
                 </a>
@@ -271,7 +270,7 @@ export default function UserProperties() {
                 <a href="single-property-1.html">
                   <img
                     alt="my-properties-3"
-                    src={process.env.PUBLIC_URL + "images/feature-properties/fp-6.jpg"}
+                    src={process.env.PUBLIC_URL + '/images/feature-properties/fp-6.jpg'}
                     className="img-fluid"
                   />
                 </a>

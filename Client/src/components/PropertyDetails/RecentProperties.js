@@ -12,7 +12,7 @@ export default function RecentProperties() {
             <div className="recent-main">
               <div className="recent-img">
                 <a href="blog-details.html">
-                  <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-1.jpg"} alt="" />
                 </a>
               </div>
               <div className="info-img">
@@ -25,7 +25,7 @@ export default function RecentProperties() {
             <div className="recent-main my-4">
               <div className="recent-img">
                 <a href="blog-details.html">
-                  <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-2.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-2.jpg"} alt="" />
                 </a>
               </div>
               <div className="info-img">
@@ -38,7 +38,7 @@ export default function RecentProperties() {
             <div className="recent-main">
               <div className="recent-img">
                 <a href="blog-details.html">
-                  <img src={process.env.PUBLIC_URL + "images/feature-properties/fp-3.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/feature-properties/fp-3.jpg"} alt="" />
                 </a>
               </div>
               <div className="info-img">

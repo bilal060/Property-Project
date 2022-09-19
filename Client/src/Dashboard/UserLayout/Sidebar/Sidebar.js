@@ -1,16 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SideBarRoutes from './SideBarRoutes';
+import Hooks from '../../../hooks'
 
 export default function Sidebar() {
+  const SideBarRoute = SideBarRoutes();
+  const { ActivatedRoutes } = Hooks();
+
   return (
     <>
       <div className="user-profile-box mb-0">
         <div className="sidebar-header">
-          <img src={process.env.PUBLIC_URL + "images/logo-blue.svg"} alt="header-logo2.png" />
+          <Link to="/">
+            <img src={process.env.PUBLIC_URL + "/images/logo-blue.svg"} alt="header-logo2.png" />
+
+          </Link>
         </div>
         <div className="header clearfix">
           <img
-            src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"}
+            src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"}
             alt="avatar"
             className="img-fluid profile-img"
           />
@@ -20,53 +28,17 @@ export default function Sidebar() {
         </div>
         <div className="detail clearfix">
           <ul className="mb-0">
-            <li>
-              <Link className="active" to="/dashboard">
-                <i className="fa fa-map-marker" /> Dashboard
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/Profile">
-                <i className="fa fa-user" />
-                Profile
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/Properties">
-                <i className="fa fa-list" aria-hidden="true" />
-                My Properties
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/FavProperties">
-                <i className="fa fa-heart" aria-hidden="true" />
-                Favorited Properties
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/AddProperty">
-                <i className="fa fa-list" aria-hidden="true" />
-                Add Property
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/PaymentMethod">
-                <i className="fas fa-credit-card" />
-                Payments
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/Invoice">
-                <i className="fas fa-paste" />
-                Invoices
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/ChangePassword">
-                <i className="fa fa-lock" />
-                Change Password
-              </Link>
-            </li>
+
+            {SideBarRoute.map((item, index) => {
+              if (item.visiblity === true) {
+                return <li>
+                  <Link className={ActivatedRoutes() === item.link ? "active" : ""} to={item.link}>
+                    <i className={item.icon} /> {item.name}
+                  </Link>
+                </li>
+              }
+            })}
+
             <li>
               <Link to="/">
                 <i className="fas fa-sign-out-alt" />

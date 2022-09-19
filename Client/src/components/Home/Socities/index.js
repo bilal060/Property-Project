@@ -17,7 +17,7 @@ export default function PopularPlaces() {
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-1">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/12.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/12.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">
@@ -33,7 +33,7 @@ export default function PopularPlaces() {
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-2">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/13.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/13.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">
@@ -49,7 +49,7 @@ export default function PopularPlaces() {
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-3">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/14.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/14.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">
@@ -65,7 +65,7 @@ export default function PopularPlaces() {
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-3">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/9.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/9.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">
@@ -81,7 +81,7 @@ export default function PopularPlaces() {
               <div className="small-category-2 mob-mt">
                 <div className="small-category-2-thumb img-8">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/15.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/15.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">
@@ -97,7 +97,7 @@ export default function PopularPlaces() {
               <div className="small-category-2">
                 <div className="small-category-2-thumb img-10">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/10.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/10.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">
@@ -113,7 +113,7 @@ export default function PopularPlaces() {
               <div className="small-category-2 si-mt">
                 <div className="small-category-2-thumb img-11">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/5.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/5.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">
@@ -129,7 +129,7 @@ export default function PopularPlaces() {
               <div className="small-category-2 no-mb si-mt">
                 <div className="small-category-2-thumb img-11">
                   <Link to="/AllProperties">
-                    <img src={process.env.PUBLIC_URL + "images/popular-places/6.jpg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/popular-places/6.jpg"} alt="" />
                   </Link>
                 </div>
                 <div className="sc-2-detail">

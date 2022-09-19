@@ -58,7 +58,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -70,7 +70,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -82,7 +82,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -94,7 +94,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -106,7 +106,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -118,7 +118,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -130,7 +130,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -142,7 +142,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -154,7 +154,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -167,7 +167,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -179,7 +179,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -191,7 +191,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -203,7 +203,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -215,7 +215,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -227,7 +227,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -239,7 +239,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -251,7 +251,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -263,7 +263,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -275,7 +275,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>
@@ -287,7 +287,7 @@ export default function ClientTestimonials() {
               </p>
               <div className="detailJC">
                 <span>
-                  <img src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
                 </span>
                 <h5>Lisa Smith</h5>
                 <p>New York</p>

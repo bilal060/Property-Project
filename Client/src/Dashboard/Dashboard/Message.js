@@ -9,7 +9,7 @@ export default function Message() {
           <div className="messages">
             <div className="message">
               <div className="thumb">
-                <img className="img-fluid" src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"} alt="" />
+                <img className="img-fluid" src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" />
               </div>
               <div className="body">
                 <h6>Mary Smith</h6>
@@ -36,7 +36,7 @@ export default function Message() {
             </div>
             <div className="message">
               <div className="thumb">
-                <img className="img-fluid" src={process.env.PUBLIC_URL + "images/testimonials/ts-2.jpg"} alt="" />
+                <img className="img-fluid" src={process.env.PUBLIC_URL + "/images/testimonials/ts-2.jpg"} alt="" />
               </div>
               <div className="body">
                 <h6>Karl Tyron</h6>
@@ -63,7 +63,7 @@ export default function Message() {
             </div>
             <div className="message">
               <div className="thumb">
-                <img className="img-fluid" src={process.env.PUBLIC_URL + "images/testimonials/ts-3.jpg"} alt="" />
+                <img className="img-fluid" src={process.env.PUBLIC_URL + "/images/testimonials/ts-3.jpg"} alt="" />
               </div>
               <div className="body">
                 <h6>Lisa Willis</h6>

@@ -1,17 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { logout } from "../api/index";
-
-export const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
-const authenticationRoute = () => {
-  if (window.location.pathname !== "/login") {
-    window.location.href = `/login?${window.location.pathname.replace(
-      "/",
-      ""
-    )}`;
-  }
-};
+export const API_URL = process.env.REACT_APP_API_URL;
 export const api = axios.create({
   baseURL: API_URL,
 });

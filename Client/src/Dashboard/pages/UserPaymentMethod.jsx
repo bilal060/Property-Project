@@ -2,7 +2,6 @@ import React from 'react';
 export default function UserPaymentMethod() {
   return (
     <div className="col-lg-9 col-md-12 col-xs-12 py-0 pl-0 user-dash2">
-     
       <section className="payment-method notfound">
         <div className="row">
           <div className="col-md-12 col-lg-6">
@@ -72,7 +71,11 @@ export default function UserPaymentMethod() {
                       <h4>PayPal</h4>
                     </div>
                     <div className="pull-right">
-                      <img src={process.env.PUBLIC_URL + "images/paypal.png"} className="img-responsive" alt="" />
+                      <img
+                        src={process.env.PUBLIC_URL + '/images/paypal.png'}
+                        className="img-responsive"
+                        alt=""
+                      />
                     </div>
                   </header>
                   <div className="collapse" id="paypal" role="tablist" aria-expanded="false">
@@ -122,7 +125,11 @@ export default function UserPaymentMethod() {
                       <h4>Credit / Debit Card</h4>
                     </div>
                     <div className="pull-right">
-                      <img src={process.env.PUBLIC_URL + "images/credit.png"} className="img-responsive" alt="" />
+                      <img
+                        src={process.env.PUBLIC_URL + '/images/credit.png'}
+                        className="img-responsive"
+                        alt=""
+                      />
                     </div>
                   </header>
                   <div className="collapse" id="debit-credit" role="tablist" aria-expanded="false">

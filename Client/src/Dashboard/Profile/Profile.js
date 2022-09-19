@@ -9,7 +9,7 @@ export default function Profile() {
       <div className="sidebar-widget author-widget2">
         <div className="author-box clearfix">
           <img
-            src={process.env.PUBLIC_URL + "images/testimonials/ts-1.jpg"}
+            src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"}
             alt="author-image"
             className="author__img"
           />

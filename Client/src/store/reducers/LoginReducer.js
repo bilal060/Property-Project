@@ -3,7 +3,7 @@ import {
 } from "../action-types";
 
 const initialState = {
-  data: [],
+  data: {},
   loading: false,
 };
 

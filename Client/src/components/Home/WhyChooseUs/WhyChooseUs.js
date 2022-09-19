@@ -19,7 +19,7 @@ export default function WhyChooseUs() {
             >
               <div className="serv-flex">
                 <div className="art-1 img-13">
-                  <img src={process.env.PUBLIC_URL + "images/icons/icon-4.svg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/icons/icon-4.svg"} alt="" />
                   <h3>Wide Renge Of Properties</h3>
                 </div>
                 <div className="service-text-p">
@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
             >
               <div className="serv-flex">
                 <div className="art-1 img-14">
-                  <img src={process.env.PUBLIC_URL + "images/icons/icon-5.svg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/icons/icon-5.svg"} alt="" />
                   <h3>Trusted by thousands</h3>
                 </div>
                 <div className="service-text-p">
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
             >
               <div className="serv-flex arrow">
                 <div className="art-1 img-15">
-                  <img src={process.env.PUBLIC_URL + "images/icons/icon-6.svg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/icons/icon-6.svg"} alt="" />
                   <h3>Financing made easy</h3>
                 </div>
                 <div className="service-text-p">
@@ -73,7 +73,7 @@ export default function WhyChooseUs() {
             >
               <div className="serv-flex">
                 <div className="art-1 img-14">
-                  <img src={process.env.PUBLIC_URL + "images/icons/icon-15.svg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/icons/icon-15.svg"} alt="" />
                   <h3>We are here near you</h3>
                 </div>
                 <div className="service-text-p">

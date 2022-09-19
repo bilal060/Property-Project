@@ -1,11 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { DataEncryption, registerValidationSchema } from '../utils';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { userRegisterApi } from '../store/api';
+import { Link, useHistory } from 'react-router-dom';
 
 function Register() {
+  const history = useHistory();
+
   const onSubmit = (values, props) => {
-    console.log(JSON.stringify(values));
+    userRegisterApi(values)
+      .then((response) => {
+        history.push('/login');
+      })
+      .catch((error) => {
+        console.log;
+      });
     console.log(props);
     setTimeout(() => {
       props.resetForm();
@@ -24,9 +33,9 @@ function Register() {
 
   return (
     <div className="inner-pages">
-      <section class="headings">
-        <div class="text-heading text-center">
-          <div class="container">
+      <section className="headings">
+        <div className="text-heading text-center">
+          <div className="container">
             <h1>Register</h1>
             <h2>
               <a href="index.html">Home </a> &nbsp;/&nbsp; Register

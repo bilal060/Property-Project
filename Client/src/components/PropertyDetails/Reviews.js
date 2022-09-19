@@ -9,7 +9,7 @@ export default function Reviews() {
           <ul className="col-12 commented pl-0">
             <li className="comm-inf">
               <div className="col-md-2">
-                <img src={process.env.PUBLIC_URL + "images/testimonials/ts-5.jpg"} className="img-fluid" alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-5.jpg"} className="img-fluid" alt="" />
               </div>
               <div className="col-md-10 comments-info">
                 <div className="conra">
@@ -31,7 +31,7 @@ export default function Reviews() {
                   tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.
                 </p>
                 <div className="rest">
-                  <img src={process.env.PUBLIC_URL + "images/single-property/s-1.jpg"} className="img-fluid" alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/single-property/s-1.jpg"} className="img-fluid" alt="" />
                 </div>
               </div>
             </li>
@@ -41,7 +41,7 @@ export default function Reviews() {
           <ul className="col-12 commented pl-0">
             <li className="comm-inf">
               <div className="col-md-2">
-                <img src={process.env.PUBLIC_URL + "images/testimonials/ts-4.jpg"} className="img-fluid" alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-4.jpg"} className="img-fluid" alt="" />
               </div>
               <div className="col-md-10 comments-info">
                 <div className="conra">
@@ -70,7 +70,7 @@ export default function Reviews() {
           <ul className="col-12 commented mb-0 pl-0">
             <li className="comm-inf">
               <div className="col-md-2">
-                <img src={process.env.PUBLIC_URL + "images/testimonials/ts-3.jpg"} className="img-fluid" alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-3.jpg"} className="img-fluid" alt="" />
               </div>
               <div className="col-md-10 comments-info">
                 <div className="conra">
@@ -93,10 +93,10 @@ export default function Reviews() {
                 </p>
                 <div className="resti">
                   <div className="rest">
-                    <img src={process.env.PUBLIC_URL + "images/single-property/s-2.jpg"} className="img-fluid" alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/single-property/s-2.jpg"} className="img-fluid" alt="" />
                   </div>
                   <div className="rest">
-                    <img src={process.env.PUBLIC_URL + "images/single-property/s-3.jpg"} className="img-fluid" alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/single-property/s-3.jpg"} className="img-fluid" alt="" />
                   </div>
                 </div>
               </div>

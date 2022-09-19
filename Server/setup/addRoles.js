@@ -25,8 +25,8 @@ async function createRoles() {
 
         await new Roles({
             codeName: uuidv4(),
-            displayName: "Customer",
-            roleType: "Customer",
+            displayName: "Super Admin",
+            roleType: "superAdmin",
 
         }).save();
         console.log('👍👍👍👍👍👍👍👍 Roles created : Done!');

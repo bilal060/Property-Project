@@ -5,7 +5,7 @@ export default function PropertyVideo() {
     <>
       <div className="property wprt-image-video w50 pro">
         <h5>Property Video</h5>
-        <img alt="image" src={process.env.PUBLIC_URL + "images/slider/home-slider-4.jpg"} />
+        <img alt="image" src={process.env.PUBLIC_URL + "/images/slider/home-slider-4.jpg"} />
         <a
           className="icon-wrap popup-video popup-youtube"
           href="https://www.youtube.com/watch?v=14semTlwyUY"

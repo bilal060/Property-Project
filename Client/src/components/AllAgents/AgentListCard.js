@@ -9,7 +9,7 @@ export default function AgentListCard() {
                     <Link to="agentdetails" className="news-img-link">
                         <div className="news-item-img homes">
                             <div className="homes-tag button alt featured">3 Listings</div>
-                            <img className="resp-img" src={process.env.PUBLIC_URL + "images/team/a-1.png"} alt="blog image" />
+                            <img className="resp-img" src={process.env.PUBLIC_URL + "/images/team/a-1.png"} alt="blog image" />
                         </div>
                     </Link>
                     <div className="news-item-text">
@@ -38,7 +38,7 @@ export default function AgentListCard() {
                             </a>
                             <div className="admin">
                                 <p>Company Name</p>
-                                <img src={process.env.PUBLIC_URL + "images/partners/1.png"} alt="" />
+                                <img src={process.env.PUBLIC_URL + "/images/partners/1.png"} alt="" />
                             </div>
                         </div>
                     </div>

@@ -37,7 +37,7 @@ exports.register = async (req, res) => {
     const newUser = new User();
     const passwordHash = newUser.generateHash(password);
     await new User({
-      firstName, lastName, email, password: passwordHash, role: cRole._id
+      firstName, lastName, email, password: passwordHash, role: cRole._id, photo: `https://ui-avatars.com/api/?name=${firstName}+${lastName}`
     }).save();
 
     res.json({
@@ -97,9 +97,10 @@ exports.login = async (req, res) => {
     ).exec();
 
     res.cookie('token', token, {
-      maxAge: req.body.remember ? 72 * 60 * 60 * 1000 : 60 * 60 * 1000,
-      sameSite: 'none',
+      maxAge: req.body.rememberMe ? 72 * 60 * 60 * 1000 : 60 * 60 * 1000,
+      domain: 'http://localhost:3000',
       httpOnly: true,
+      sameSite: 'none',
       secure: true,
     });
 

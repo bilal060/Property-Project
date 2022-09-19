@@ -9,7 +9,7 @@ export default function Special() {
         </div>
         <div className="widget-boxed-body">
           <div className="banner">
-            <img src={process.env.PUBLIC_URL + "images/single-property/banner.jpg"} alt="" />
+            <img src={process.env.PUBLIC_URL + "/images/single-property/banner.jpg"} alt="" />
           </div>
         </div>
       </div>

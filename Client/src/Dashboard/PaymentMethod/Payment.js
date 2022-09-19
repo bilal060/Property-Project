@@ -23,7 +23,7 @@ export default function PaymentMethod() {
                 <h4>PayPal</h4>
               </div>
               <div className="pull-right">
-                <img src={process.env.PUBLIC_URL + "images/paypal.png" className="img-responsive"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/paypal.png" className="img-responsive"} alt="" />
               </div>
             </header>
             <div className="collapse" id="paypal" role="tablist" aria-expanded="false">
@@ -73,7 +73,7 @@ export default function PaymentMethod() {
                 <h4>Credit / Debit Card</h4>
               </div>
               <div className="pull-right">
-                <img src={process.env.PUBLIC_URL + "images/credit.png" className="img-responsive"} alt="" />
+                <img src={process.env.PUBLIC_URL + "/images/credit.png" className="img-responsive"} alt="" />
               </div>
             </header>
             <div className="collapse" id="debit-credit" role="tablist" aria-expanded="false">
