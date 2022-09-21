@@ -12,7 +12,6 @@ export const loginAction = (data) => async (dispatch) => {
   });
 };
 
-
 export const getAllSocietiesAction = () => async (dispatch) => {
   try {
     dispatch({
