@@ -419,7 +419,7 @@ export default function UserAddProperty() {
             </div>
           </div>
         </div>
-      </div>{' '}
+      </div>
     </div>
   );
 }

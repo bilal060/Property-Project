@@ -71,6 +71,7 @@ router.route('/society/getPictureByPath/:path').get(catchErrors(societyControlle
 router.route('/phase/create').post([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(phaseController.create));
 router.route('/phase/list').get(catchErrors(phaseController.list));
 router.route('/phase/read/:id').get(catchErrors(phaseController.read));
+router.route('/phase/getPhaseBySocietyId/:id').get(catchErrors(phaseController.getPhaseBySocietyId))
 router.route('/phase/update/:id').patch([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(phaseController.update));
 router.route('/phase/delete/:id').delete(isValidAdminToken, catchErrors(phaseController.delete));
 

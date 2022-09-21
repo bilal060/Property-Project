@@ -59,3 +59,27 @@ export const getAllPhasesAction = () => async (dispatch) => {
 
 
 
+
+export const getAllBlocksAction = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: types.GET_ALL_BLOCKS_REQUEST,
+      loading: true,
+    });
+    const { data } = await api.getAllBlocksApi();
+    dispatch({
+      type: types.GET_ALL_BLOCKS_SUCCESS,
+      payload: data?.result,
+    });
+
+  } catch (error) {
+
+    dispatch({
+      type: types.GET_ALL_BLOCKS_FAIL,
+      payload: error,
+    });
+  }
+}
+
+
+

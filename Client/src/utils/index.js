@@ -49,6 +49,18 @@ export const PhasesValidationSchema = Yup.object().shape({
     society: Yup.string().required('Society is Required'),
 });
 
+
+
+
+export const BlocksValidationSchema = Yup.object().shape({
+    name: Yup.string().required('Name is Required'),
+    ownerName: Yup.string().required('Owner Name is Required'),
+    status: Yup.string().oneOf(['Active', 'InActive']).required('Status is Required'),
+    society: Yup.string().required('Society is Required'),
+    phase: Yup.string().required('Phase is Required'),
+
+});
+
 export const FormDataFunc = (Data) => {
     console.log(Data)
     const formData = new FormData();
@@ -58,4 +70,3 @@ export const FormDataFunc = (Data) => {
     });
     return formData;
 }
-

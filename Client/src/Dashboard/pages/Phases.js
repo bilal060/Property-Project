@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllSocietiesAction, getAllPhasesAction } from '../../store/actions';
 import moment from "moment"
 import Modal from 'react-bootstrap/Modal';
-export default function AllSocieties() {
+export default function AllPhases() {
   const allSocieties = useSelector(state => state.AllSocieties);
   const AllPhases = useSelector(state => state.AllPhases);
 
@@ -59,7 +59,6 @@ export default function AllSocieties() {
   }
 
   const editModeFunc = (data) => {
-    console.log(data)
     setEditMode(true);
     setInitialValues({
       _id: data._id,
@@ -182,9 +181,9 @@ export default function AllSocieties() {
                 <th className="pl-2">All</th>
                 <th className="p-0" />
                 <th>Date Added</th>
-                <th>Manager Name</th>
+                <th>Society</th>
                 <th>Owner Name</th>
-                
+
                 <th>Added by</th>
                 {SuperAdmin() && (<th>Actions</th>)}
               </tr>
@@ -214,9 +213,9 @@ export default function AllSocieties() {
                     </div>
                   </td>
                   <td>{moment(item.createdAt).format('llll')}</td>
-                  <td>{item.managerName}</td>
+                  <td>{item.society.name}</td>
                   <td>{item.ownerName}</td>
-                
+
                   <td>{`${item.createdBy.firstName}  ${item.createdBy.lastName}`}</td>
 
                   {SuperAdmin() && (<td className="actions">

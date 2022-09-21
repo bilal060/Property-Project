@@ -176,12 +176,36 @@ exports.delete = async (Model, req, res) => {
  */
 
 exports.list = async (Model, req, res) => {
+
+  const { society, phase, block } = req.query
   const page = req.query.page || 1;
   const limit = parseInt(req.query.items) || 10;
   const skip = page * limit - limit;
   try {
+
+    let query = { removed: false }
+    if (society) {
+      query.society = society
+
+    } else if (phase) {
+      query.phase = phase
+    } else if (block) {
+      query.block = block
+    } else if (society && phase) {
+      query.society = society
+      query.phase = phase
+    }
+    else if (phase && block) {
+      query.phase = phase
+      query.block = block
+    }
+    if (society && phase && block) {
+      query.phase = phase
+      query.block = block
+      query.society = society
+    }
     //  Query the database for a list of all results
-    const resultsPromise = Model.find({ removed: false })
+    const resultsPromise = Model.find(query)
       .skip(skip)
       .limit(limit)
       .sort({ created: 'desc' })
