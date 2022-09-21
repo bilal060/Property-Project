@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Hooks from '../../hooks';
 import UserDropdownRoutes from './UserDropdownRoutes';
 
 export default function Header() {
+  const userinfo = useSelector((state) => state.UserLogin.data.user);
   const [showDropdown, setShowDropdown] = useState(false);
   const { Logout, AgentRole, IsUserLoggedIn, SuperAdmin } = Hooks();
 
@@ -89,7 +91,7 @@ export default function Header() {
                   <span>
                     <img src={process.env.PUBLIC_URL + '/images/testimonials/ts-1.jpg'} alt="" />
                   </span>
-                  Hi, Mary!
+                  Hi, {userinfo?.firstName}!
                 </div>
                 <ul>
                   {dropDown.map((item, key) => {

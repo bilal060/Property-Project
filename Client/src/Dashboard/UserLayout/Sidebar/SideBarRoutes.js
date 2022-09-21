@@ -37,6 +37,12 @@ const SideBarRoutes = () => {
             visiblity: AgentRole() || SuperAdmin()
         }
         , {
+            name: "Add Property",
+            link: '/dashboard/AddProperty',
+            icon: 'fa fa-list',
+            visiblity: AgentRole() || SuperAdmin()
+        }
+        , {
             name: "My Properties",
             link: '/dashboard/Properties',
             icon: 'fa fa-list',
