@@ -1,9 +1,11 @@
 const express = require('express');
 
 const helmet = require('helmet');
-const path = require('path');
 const cors = require('cors');
-
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
+const url = require("url");
 const cookieParser = require('cookie-parser');
 require('dotenv').config({ path: '.variables.env' });
 const swaggerui = require("swagger-ui-express");
@@ -42,7 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     store: MongoStore.create({ mongoUrl: process.env.DATABASE }),
 //   })
 // );
-
+app.use(express.static('public'));
+app.use('/api/images', express.static(path.join(__dirname, 'public/uploads/user')));
 
 app.use('/api-docs', swaggerui.serve, swaggerui.setup(docs));
 app.use((req, res, next) => {
@@ -78,13 +81,16 @@ app.use(
   erpApiRouter
 );
 
-
 app.use(
   '/api/agent',
+  isValidAgent,
   agentRouter
 );
+
+// inside public directory.
+
 // If that above routes didnt work, we 404 them and forward to error handler
-app.use(errorHandlers.notFound);
+// app.use(errorHandlers.notFound);
 
 // Otherwise this was a really bad error we didn't expect! Shoot eh
 if (app.get('env') === 'development') {

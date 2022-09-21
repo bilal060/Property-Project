@@ -20,7 +20,6 @@ function App() {
   //   });
   // }
   const location = useLocation();
-  console.log(location.pathname);
   if (location.pathname.includes('dashboard')) {
     return (
       <>

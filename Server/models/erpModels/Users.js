@@ -34,13 +34,11 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    role: { type: mongoose.Schema.ObjectId, ref: 'Role', autopopulate: true },
-
+    role: { type: mongoose.Schema.ObjectId, ref: 'Role', autopopulate: { select: "displayName  roleType  removed" }, maxDepth: 1 },
     isLoggedIn: { type: Boolean },
-});
+}, { timestamps: true });
 
 UserSchema.plugin(require('mongoose-autopopulate'));
-
 // generating a hash
 UserSchema.methods.generateHash = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(), null);

@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { stubFalse } = require('lodash');
 const mongoose = require('mongoose');
-const Admin = mongoose.model('Admin');
 const User = mongoose.model('User');
 require('dotenv').config({ path: '.variables.env' });
 
@@ -26,7 +25,7 @@ exports.isValidAdminToken = async (req, res, next) => {
                 jwtExpired: true,
             });
 
-        const admin = await Admin.findOne({ _id: verified.id, removed: false });
+        const admin = await User.findOne({ _id: verified.id, removed: false });
         if (!admin)
             return res.status(401).json({
                 success: false,
@@ -43,7 +42,7 @@ exports.isValidAdminToken = async (req, res, next) => {
                 jwtExpired: true,
             });
         else {
-            req.admin = admin;
+            req.user = admin;
             next();
         }
     } catch (err) {

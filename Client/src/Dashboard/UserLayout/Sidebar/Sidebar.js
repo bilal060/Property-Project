@@ -5,7 +5,7 @@ import Hooks from '../../../hooks'
 
 export default function Sidebar() {
   const SideBarRoute = SideBarRoutes();
-  const { ActivatedRoutes } = Hooks();
+  const { ActivatedRoutes, Logout } = Hooks();
 
   return (
     <>
@@ -39,8 +39,8 @@ export default function Sidebar() {
               }
             })}
 
-            <li>
-              <Link to="/">
+            <li className='cursor-pointer' onClick={() => Logout()}>
+              <Link to={ActivatedRoutes()}>
                 <i className="fas fa-sign-out-alt" />
                 Log Out
               </Link>

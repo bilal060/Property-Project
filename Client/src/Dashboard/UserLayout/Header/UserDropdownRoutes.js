@@ -1,7 +1,7 @@
 import React from 'react'
 import Hooks from "../../../hooks"
 const UserDropdownRoutes = () => {
-    const { IsUserLoggedIn, AgentRole } = Hooks();
+    const { IsUserLoggedIn, AgentRole, SuperAdmin } = Hooks();
 
     const Routes = [
         {
@@ -12,11 +12,11 @@ const UserDropdownRoutes = () => {
         {
             name: "Add Property",
             link: '/dashboard/AddProperty',
-            visiblity: AgentRole()
+            visiblity: AgentRole() || SuperAdmin()
         }, {
             name: "Payments",
             link: '/dashboard/PaymentMethod',
-            visiblity: AgentRole()
+            visiblity: AgentRole() || SuperAdmin()
         }
         , {
             name: "Change Password",

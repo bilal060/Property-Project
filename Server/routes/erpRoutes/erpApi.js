@@ -28,13 +28,13 @@ const adminPhotoUpload = multer({ storage: adminPhotoStorage });
 router
   .route('/admin/create')
   .post([adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(adminController.create));
-router.route('/admin/read/:id').get(isValidAdminToken, catchErrors(adminController.read));
-// router.route("/admin/update/:id").patch(isValidAdminToken,catchErrors(adminController.update));
+router.route('/admin/read/:id').get(catchErrors(adminController.read));
+// router.route("/admin/update/:id").patch(catchErrors(adminController.update));
 // router.route("/admin/delete/:id").delete(isValidAdminToken,catchErrors(adminController.delete));
-router.route('/admin/search').get(isValidAdminToken, catchErrors(adminController.search));
-router.route('/admin/list').get(isValidAdminToken, catchErrors(adminController.list));
-router.route('/admin/profile').get(isValidAdminToken, catchErrors(adminController.profile));
-router.route('/admin/status/:id').patch(isValidAdminToken, catchErrors(adminController.status));
+router.route('/admin/search').get(catchErrors(adminController.search));
+router.route('/admin/list').get(catchErrors(adminController.list));
+router.route('/admin/profile').get(catchErrors(adminController.profile));
+router.route('/admin/status/:id').patch([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(adminController.status));
 // router
 //   .route("/admin/photo")
 //   .post(
@@ -43,50 +43,50 @@ router.route('/admin/status/:id').patch(isValidAdminToken, catchErrors(adminCont
 //   );
 // router
 //   .route("/admin/password-update/:id")
-//   .patch(isValidAdminToken,catchErrors(adminController.updatePassword));
+//   .patch(catchErrors(adminController.updatePassword));
 
 // //____________________________ Role management_______________________________
 
-router.route('/role/create').post(isValidAdminToken, catchErrors(roleController.create));
-router.route('/role/read/:id').get(isValidAdminToken, catchErrors(roleController.read));
-router.route('/role/update/:id').patch(isValidAdminToken, catchErrors(roleController.update));
+router.route('/role/create').post([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(roleController.create));
+router.route('/role/read/:id').get(catchErrors(roleController.read));
+router.route('/role/update/:id').patch([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(roleController.update));
 router.route('/role/delete/:id').delete(isValidAdminToken, catchErrors(roleController.delete));
-router.route('/role/search').get(isValidAdminToken, catchErrors(roleController.search));
-router.route('/role/list').get(isValidAdminToken, catchErrors(roleController.list));
-router.route('/role/filter').get(isValidAdminToken, catchErrors(roleController.filter));
+router.route('/role/search').get(catchErrors(roleController.search));
+router.route('/role/list').get(catchErrors(roleController.list));
+router.route('/role/filter').get(catchErrors(roleController.filter));
 
 
-// ---------------------------------Api for Socities----------------
+// ---------------------------------Api for Societies----------------
 
-router.route('/society/create').post([adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(societyController.create));
-router.route('/society/list').get(isValidAdminToken, catchErrors(societyController.list));
-router.route('/society/read/:id').get(isValidAdminToken, catchErrors(societyController.read));
-router.route('/society/update/:id').patch(isValidAdminToken, catchErrors(societyController.update));
+router.route('/society/create').post([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(societyController.create));
+router.route('/society/list').get(catchErrors(societyController.list));
+router.route('/society/read/:id').get(catchErrors(societyController.read));
+router.route('/society/update/:id').patch([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(societyController.update));
 router.route('/society/delete/:id').delete(isValidAdminToken, catchErrors(societyController.delete));
-router.route('/society/getPictureByPath/:path').get(isValidAdminToken, catchErrors(societyController.getPictureByPath));
+router.route('/society/getPictureByPath/:path').get(catchErrors(societyController.getPictureByPath));
 
 
 
 // // ---------------------------------Api for Phases----------------
-router.route('/phase/create').post(isValidAdminToken, catchErrors(phaseController.create));
-router.route('/phase/list').get(isValidAdminToken, catchErrors(phaseController.list));
-router.route('/phase/read/:id').get(isValidAdminToken, catchErrors(phaseController.read));
-router.route('/phase/update/:id').patch(isValidAdminToken, catchErrors(phaseController.update));
+router.route('/phase/create').post([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(phaseController.create));
+router.route('/phase/list').get(catchErrors(phaseController.list));
+router.route('/phase/read/:id').get(catchErrors(phaseController.read));
+router.route('/phase/update/:id').patch([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(phaseController.update));
 router.route('/phase/delete/:id').delete(isValidAdminToken, catchErrors(phaseController.delete));
 
 // // ---------------------------------Api for Blocks-------------------
-router.route('/block/create').post(isValidAdminToken, catchErrors(blockController.create));
-router.route('/block/list').get(isValidAdminToken, catchErrors(blockController.list));
-router.route('/block/read/:id').get(isValidAdminToken, catchErrors(blockController.read));
-router.route('/block/update/:id').patch(isValidAdminToken, catchErrors(blockController.update));
+router.route('/block/create').post([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(blockController.create));
+router.route('/block/list').get(catchErrors(blockController.list));
+router.route('/block/read/:id').get(catchErrors(blockController.read));
+router.route('/block/update/:id').patch([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(blockController.update));
 router.route('/block/delete/:id').delete(isValidAdminToken, catchErrors(blockController.delete));
 
 // // ---------------------------------Api for Property---------------------
 
-router.route('/property/create').post(isValidAdminToken, catchErrors(propertyController.create));
-router.route('/property/list').get(isValidAdminToken, catchErrors(propertyController.list));
-router.route('/property/read/:id').get(isValidAdminToken, catchErrors(propertyController.read));
-router.route('/property/update/:id').patch(isValidAdminToken, catchErrors(propertyController.update));
+router.route('/property/create').post([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(propertyController.create));
+router.route('/property/list').get(catchErrors(propertyController.list));
+router.route('/property/read/:id').get(catchErrors(propertyController.read));
+router.route('/property/update/:id').patch([isValidAdminToken, adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(propertyController.update));
 router.route('/property/delete/:id').delete(isValidAdminToken, catchErrors(propertyController.delete));
 
 

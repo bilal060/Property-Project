@@ -33,16 +33,16 @@ export const AuthRoutes = ({
 
 
 
-export const AgentRoutes = ({
+export const ProtectedRoutes = ({
     component: Component,
     ...rest
 }) => {
-    const { IsUserLoggedIn, AgentRole } = Hooks();
+    const { SuperAdmin, AgentRole } = Hooks();
     return (
         <Route
             {...rest}
             render={props => {
-                if (IsUserLoggedIn() && AgentRole()) {
+                if (AgentRole() || SuperAdmin()) {
                     return <Component {...props} />;
                 } else {
                     return (
@@ -89,4 +89,33 @@ export const AuthenticatedRoutes = ({
         />
     );
 };
+
+export const AdminRoutes = ({
+    component: Component,
+    ...rest
+}) => {
+    const { SuperAdmin } = Hooks();
+    return (
+        <Route
+            {...rest}
+            render={props => {
+                if (SuperAdmin()) {
+                    return <Component {...props} />;
+                } else {
+                    return (
+                        <Redirect
+                            to={{
+                                pathname: "/",
+                                state: {
+                                    from: props.location
+                                }
+                            }}
+                        />
+                    );
+                }
+            }}
+        />
+    );
+};
+
 

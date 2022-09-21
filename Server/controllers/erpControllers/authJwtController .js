@@ -79,14 +79,7 @@ exports.login = async (req, res) => {
         message: 'Invalid credentials.',
       });
 
-    const token = jwt.sign(
-      {
-        id: user._id,
-        role: user.role.roleType,
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: '72h' }
-    );
+
 
     const result = await User.findOneAndUpdate(
       { _id: user._id },
@@ -95,7 +88,16 @@ exports.login = async (req, res) => {
         new: true,
       }
     ).exec();
-
+    console.log(result)
+    const token = jwt.sign(
+      {
+        id: result._id,
+        role: result.role.roleType,
+        isLoggedIn: result.isLoggedIn,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: '72h' }
+    );
     res.cookie('token', token, {
       maxAge: req.body.rememberMe ? 72 * 60 * 60 * 1000 : 60 * 60 * 1000,
       domain: 'http://localhost:3000',
@@ -193,58 +195,6 @@ exports.login = async (req, res) => {
 //     res.status(500).json({ success: false, result: null, message: err.message, error: err });
 //   }
 // };
-
-exports.isValidAdminToken = async (req, res, next) => {
-  try {
-    const token = req.cookies.token;
-
-    if (!token)
-      return res.status(401).json({
-        success: false,
-        result: null,
-        message: 'No authentication token, authorization denied.',
-        jwtExpired: true,
-      });
-
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
-
-    if (!verified)
-      return res.status(401).json({
-        success: false,
-        result: null,
-        message: 'Token verification failed, authorization denied.',
-        jwtExpired: true,
-      });
-
-    const admin = await Admin.findOne({ _id: verified.id, removed: false });
-    if (!admin)
-      return res.status(401).json({
-        success: false,
-        result: null,
-        message: "Admin doens't Exist, authorization denied.",
-        jwtExpired: true,
-      });
-
-    if (admin.isLoggedIn === false)
-      return res.status(401).json({
-        success: false,
-        result: null,
-        message: 'Admin is already logout try to login, authorization denied.',
-        jwtExpired: true,
-      });
-    else {
-      req.admin = admin;
-      next();
-    }
-  } catch (err) {
-    res.status(503).json({
-      success: false,
-      result: null,
-      message: err.message,
-      error: err,
-    });
-  }
-};
 
 exports.logout = async (req, res) => {
   const result = await Admin.findOneAndUpdate(

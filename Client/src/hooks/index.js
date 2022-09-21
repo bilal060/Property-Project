@@ -5,7 +5,6 @@ import { useLocation, useHistory } from 'react-router-dom';
 
 const Hooks = () => {
     const location = useLocation();
-    const history = useHistory();
     const token = localStorage.getItem("token");
     const IsUserLoggedIn = () => {
         if (token) {
@@ -25,7 +24,14 @@ const Hooks = () => {
             return false;
         }
     }
-
+    const SuperAdmin = () => {
+        if (token) {
+            const decoded = jwt_decode(token);
+            return decoded.role === "superadmin";
+        } else {
+            return false;
+        }
+    }
     const ActivatedRoutes = () => {
         return location.pathname
     }
@@ -36,7 +42,7 @@ const Hooks = () => {
     }
 
     return {
-        IsUserLoggedIn, AgentRole, ActivatedRoutes, Logout
+        IsUserLoggedIn, AgentRole, ActivatedRoutes, Logout, SuperAdmin
     }
 }
 

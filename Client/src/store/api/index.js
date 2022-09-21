@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
 
 export const config = {};
 if (token) {
-  config.headers = { Authorization: `Bearer ${token}` };
+  config.headers = { Authorization: token };
 }
 
 // User Login API
@@ -48,3 +48,57 @@ export const resetPasswordApi = async (Data) => {
   const res = await api.put("/reset-password", Data);
   return res;
 };
+
+// Society Api
+export const addNewSocietyApi = async (Data) => {
+  const res = await api.post("/society/create", Data, config);
+  return res;
+};
+
+
+export const editSocietyApi = async (id, Data) => {
+  console.log(id, Data)
+  const res = await api.patch(`/society/update/${id}`, Data, config);
+  return res;
+};
+
+
+
+export const getAllSocietiesApi = async () => {
+  const res = await api.get("/society/list");
+  return res;
+};
+
+
+export const deleteSocietyApi = async (id) => {
+  const res = api.delete(`society/delete/${id}`, config);
+  return res;
+}
+
+
+
+// Phase Api
+export const addNewPhaseApi = async (Data) => {
+  const res = await api.post("/phase/create", Data, config);
+  return res;
+};
+
+
+export const editPhaseApi = async (id, Data) => {
+  console.log(id, Data)
+  const res = await api.patch(`/phase/update/${id}`, Data, config);
+  return res;
+};
+
+
+
+export const getAllPhasesApi = async () => {
+  const res = await api.get("/phase/list");
+  return res;
+};
+
+
+export const deletePhaseApi = async (id) => {
+  const res = api.delete(`phase/delete/${id}`, config);
+  return res;
+}

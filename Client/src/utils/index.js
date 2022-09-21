@@ -31,3 +31,31 @@ export const loginValidationSchema = Yup.object().shape({
         .required('Password is Required'),
     rememberMe: Yup.boolean().oneOf([true, false], 'Required').required('Select User Type'),
 });
+
+
+export const SocietiesValidationSchema = Yup.object().shape({
+    name: Yup.string().required('Name is Required'),
+    ownerName: Yup.string().required('Owner Name is Required'),
+    address: Yup.string().required('address is Required'),
+    managerName: Yup.string().required('Manager Name is Required'),
+    // photo: Yup.array().min(1, "select at least 1 file"),
+});
+
+
+export const PhasesValidationSchema = Yup.object().shape({
+    name: Yup.string().required('Name is Required'),
+    ownerName: Yup.string().required('Owner Name is Required'),
+    status: Yup.string().oneOf(['Active', 'InActive']).required('Status is Required'),
+    society: Yup.string().required('Society is Required'),
+});
+
+export const FormDataFunc = (Data) => {
+    console.log(Data)
+    const formData = new FormData();
+    var objMap = new Map(Object.entries(Data));
+    objMap.forEach((item, key) => {
+        formData.append(key, item)
+    });
+    return formData;
+}
+

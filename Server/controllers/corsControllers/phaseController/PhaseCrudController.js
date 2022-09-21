@@ -1,4 +1,4 @@
-const apiRest = require('./apiRest');
+const apiRest = require('./PhaseApiRest');
 const mongoose = require('mongoose');
 
 exports.createCRUDController = (modelName, filter = []) => {

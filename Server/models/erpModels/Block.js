@@ -29,6 +29,6 @@ const BlockSchema = new mongoose.Schema({
     required: true,
   },
 
-});
+}, { timestamps: true });
 BlockSchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model('Block', BlockSchema);

@@ -45,14 +45,15 @@ exports.read = async (Model, req, res) => {
 exports.create = async (Model, req, res) => {
   try {
     // Creating a new document in the collection
-
-    const result = await new Model(req.body).save();
+    const body = { ...req.body }
+    body.createdBy = req.user._id.toString()
+    const result = await new Model(body).save();
     console.log(result);
     // Returning successfull response
     return res.status(200).json({
       success: true,
       result,
-      message: 'Successfully Created the document in Model ',
+      message: 'Successfully Created',
     });
   } catch (err) {
     // If err is thrown by Mongoose due to required validations
@@ -83,8 +84,10 @@ exports.create = async (Model, req, res) => {
 
 exports.update = async (Model, req, res) => {
   try {
+    const body = { ...req.body }
+    body.updatedBy = req.user._id.toString();
     // Find document by id and updates with the required fields
-    const result = await Model.findOneAndUpdate({ _id: req.params.id, removed: false }, req.body, {
+    const result = await Model.findOneAndUpdate({ _id: req.params.id, removed: false }, body, {
       new: true, // return the new result instead of the old one
       runValidators: true,
     }).exec();

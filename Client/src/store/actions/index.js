@@ -11,3 +11,51 @@ export const loginAction = (data) => async (dispatch) => {
     loading: false,
   });
 };
+
+
+export const getAllSocietiesAction = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: types.GET_ALL_SOCIETIES_REQUEST,
+      loading: true,
+    });
+    const { data } = await api.getAllSocietiesApi();
+    dispatch({
+      type: types.GET_ALL_SOCIETIES_SUCCESS,
+      payload: data?.result,
+    });
+
+  } catch (error) {
+
+    dispatch({
+      type: types.GET_ALL_SOCIETIES_FAIL,
+      payload: error,
+    });
+  }
+}
+
+
+
+export const getAllPhasesAction = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: types.GET_ALL_PHASES_REQUEST,
+      loading: true,
+    });
+    const { data } = await api.getAllPhasesApi();
+    dispatch({
+      type: types.GET_ALL_PHASES_SUCCESS,
+      payload: data?.result,
+    });
+
+  } catch (error) {
+
+    dispatch({
+      type: types.GET_ALL_PHASES_FAIL,
+      payload: error,
+    });
+  }
+}
+
+
+

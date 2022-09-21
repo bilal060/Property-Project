@@ -19,11 +19,11 @@ var adminPhotoStorage = multer.diskStorage({
 const adminPhotoUpload = multer({ storage: adminPhotoStorage });
 
 
-router.route('/property/create').post(isValidAgent, [adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(propertyController.create));
-router.route('/property/list').get(isValidAgent, catchErrors(propertyController.list));
-router.route('/property/read/:id').get(isValidAgent, catchErrors(propertyController.read));
-router.route('/property/update/:id').patch(isValidAgent, catchErrors(propertyController.update));
-router.route('/property/delete/:id').delete(isValidAgent, catchErrors(propertyController.delete));
+router.route('/property/create').post([adminPhotoUpload.single('photo'), setFilePathToBody], catchErrors(propertyController.create));
+router.route('/property/list').get(catchErrors(propertyController.list));
+router.route('/property/read/:id').get(catchErrors(propertyController.read));
+router.route('/property/update/:id').patch(catchErrors(propertyController.update));
+router.route('/property/delete/:id').delete(catchErrors(propertyController.delete));
 
 
 module.exports = router;

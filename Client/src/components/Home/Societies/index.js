@@ -7,9 +7,9 @@ export default function PopularPlaces() {
         <div className="container-fluid">
           <div className="sec-title">
             <h2>
-              <span>All </span>Socities
+              <span>All </span>Societies
             </h2>
-            <p>Properties In  All Socities.</p>
+            <p>Properties In  All Societies.</p>
           </div>
           <div className="row">
             {/* Single category */}

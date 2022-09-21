@@ -5,7 +5,7 @@ import UserDropdownRoutes from './UserDropdownRoutes';
 
 export default function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
-  const { Logout, AgentRole, IsUserLoggedIn } = Hooks();
+  const { Logout, AgentRole, IsUserLoggedIn, SuperAdmin } = Hooks();
 
   const ToggleProfileDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -32,7 +32,7 @@ export default function Header() {
               <nav id="navigation" className="style-1">
                 <ul id="responsive">
                   <li>
-                    <Link to="AllSocities">Socities</Link>
+                    <Link to="AllSocieties">Societies</Link>
                   </li>
                   <li>
                     <Link to="AllAgents">Agents</Link>
@@ -63,58 +63,59 @@ export default function Header() {
               </nav>
               <div className="clearfix" />
             </div>
-            <div className="right-side righSide d-flex justify-content-between">
-              {IsUserLoggedIn && (
-                <div
-                  className={
-                    showDropdown
-                      ? 'header-user-menu user-menu  active'
-                      : 'header-user-menu user-menu '
-                  }
-                >
-                  <div onClick={() => ToggleProfileDropdown()} className="header-user-name">
-                    <span>
-                      <img src={process.env.PUBLIC_URL + '/images/testimonials/ts-1.jpg'} alt="" />
-                    </span>
-                    Hi, Mary!
-                  </div>
-                  <ul>
-                    {dropDown.map((item, key) => {
-                      if (item.visiblity) {
-                        return (
-                          <li>
-                            <a href={item.link}>{item.name}</a>
-                          </li>
-                        );
-                      }
-                    })}
-                    <li onClick={() => Logout()}>
-                      <a>Log Out</a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-              <div className="d-none d-none  d-lg-none d-xl-flex">
-                {/* Header Widget */}
-                <div className="header-widget">
-                  <a href="add-property.html" className="button border">
-                    Add Listing
-                    <i className="fas fa-laptop-house ml-2" />
-                  </a>
-                </div>
-                {/* Header Widget / End */}
-              </div>
 
-              {IsUserLoggedIn() === false && (
-                <div className=" d-none d-none d-lg-none d-xl-flex sign ml-0">
-                  <div className="header-widget sign-in">
-                    <div className="show-reg-form modal-open">
-                      <a href="#">Sign In</a>
-                    </div>
+            {AgentRole() ||
+              (SuperAdmin() && (
+                <div className="right-side d-none d-none  d-lg-none d-xl-flex">
+                  {/* Header Widget */}
+                  <div className="header-widget">
+                    <Link to="/dashboard/AddProperty" className="button border">
+                      Add Listing
+                      <i className="fas fa-laptop-house ml-2" />
+                    </Link>
+                  </div>
+                  {/* Header Widget / End */}
+                </div>
+              ))}
+            {IsUserLoggedIn() && (
+              <div
+                className={
+                  showDropdown
+                    ? 'header-user-menu user-menu  active'
+                    : 'header-user-menu user-menu '
+                }
+              >
+                <div onClick={() => ToggleProfileDropdown()} className="header-user-name">
+                  <span>
+                    <img src={process.env.PUBLIC_URL + '/images/testimonials/ts-1.jpg'} alt="" />
+                  </span>
+                  Hi, Mary!
+                </div>
+                <ul>
+                  {dropDown.map((item, key) => {
+                    if (item.visiblity) {
+                      return (
+                        <li>
+                          <a href={item.link}>{item.name}</a>
+                        </li>
+                      );
+                    }
+                  })}
+                  <li onClick={() => Logout()}>
+                    <a>Log Out</a>
+                  </li>
+                </ul>
+              </div>
+            )}
+            {IsUserLoggedIn() === false && (
+              <div className="right-side d-none d-none d-lg-none d-xl-flex sign ml-0">
+                <div className="header-widget sign-in">
+                  <div className="show-reg-form modal-open">
+                    <Link to="/login">Sign In</Link>
                   </div>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </header>

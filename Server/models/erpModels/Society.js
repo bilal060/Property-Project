@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+require('events').EventEmitter.prototype._maxListeners = 0;
+
 
 const societSchema = new mongoose.Schema({
   name: {
@@ -8,7 +10,7 @@ const societSchema = new mongoose.Schema({
   },
   ownerName: {
     type: String,
-    // default: false,
+   
   },
   address: {
     type: String,
@@ -18,7 +20,7 @@ const societSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  Status: {
+  status: {
     type: String,
     trim: true,
   },
@@ -26,6 +28,14 @@ const societSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-});
+  removed: {
+    type: Boolean,
+    default: false,
+  },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', autopopulate: { select: "firstName  lastName  email photo -role" }, maxDepth: 1 },
+  updatedBy: { type: mongoose.Schema.ObjectId, ref: 'User', autopopulate: { select: "firstName  lastName  email photo -role" }, maxDepth: 1 },
 
+}, { timestamps: true });
+
+societSchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model('Society', societSchema);

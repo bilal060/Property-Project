@@ -1,2 +1,2 @@
-const crudController = require('../corsControllers/crudController');
+const crudController = require('../corsControllers/phaseController/PhaseCrudController');
 module.exports = crudController.createCRUDController('Phase');

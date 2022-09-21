@@ -19341,6 +19341,12 @@ body.dashboard-bd {
 
 .listing-table .table thead tr .edit a span {
   color: #ff385c !important;
+
+}
+
+listing-table .table thead tr .edit{
+  border:none;
+  background:none;
 }
 
 .listing-table .table thead tr th {
@@ -19580,7 +19586,17 @@ body.dashboard-bd {
 
 .my-properties table tbody tr td.actions .edit {
   float: left;
-  color: #008000;
+    color: #008000;
+    background-color: transparent;
+    outline: none !important;
+    border: none;
+}
+.my-properties table tbody tr td.actions .delete {
+  float: left;
+    color: red;
+    background-color: transparent;
+    outline: none !important;
+    border: none;
 }
 
 .my-properties table tbody tr td.actions .edit i {

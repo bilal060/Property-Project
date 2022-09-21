@@ -36,6 +36,6 @@ const PropertySchema = new mongoose.Schema({
     required: true,
   },
 
-});
+}, { timestamps: true });
 PropertySchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model('Property', PropertySchema);

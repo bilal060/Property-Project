@@ -2,14 +2,14 @@ import Hooks from '../../../hooks';
 import React from 'react'
 
 const SideBarRoutes = () => {
-    const { IsUserLoggedIn, AgentRole } = Hooks();
+    const { IsUserLoggedIn, AgentRole, SuperAdmin } = Hooks();
 
     const Routes = [
         {
             name: "Dashboard",
             link: '/dashboard',
             icon: 'fa fa-map-marker',
-            visiblity: AgentRole()
+            visiblity: AgentRole() || SuperAdmin()
         }
         ,
         {
@@ -19,31 +19,43 @@ const SideBarRoutes = () => {
             visiblity: IsUserLoggedIn()
         },
         {
-            name: "Allsocieties",
-            link: '/dashboard/Allsocieties',
+            name: "Societies",
+            link: '/dashboard/AllSocieties',
             icon: 'fa fa-user',
-            visiblity: IsUserLoggedIn()
+            visiblity: AgentRole() || SuperAdmin()
+        }
+        , {
+            name: "Phases",
+            link: '/dashboard/Phases',
+            icon: 'fa fa-user',
+            visiblity: AgentRole() || SuperAdmin()
+        }
+        , {
+            name: "Blocks",
+            link: '/dashboard/Blocks',
+            icon: 'fa fa-user',
+            visiblity: AgentRole() || SuperAdmin()
         }
         , {
             name: "My Properties",
             link: '/dashboard/Properties',
             icon: 'fa fa-list',
-            visiblity: AgentRole()
+            visiblity: AgentRole() || SuperAdmin()
         }, {
             name: " Favorited Properties",
             link: '/dashboard/FavProperties',
             icon: 'fa fa-heart',
-            visiblity: AgentRole()
+            visiblity: AgentRole() || SuperAdmin()
         }, {
             name: "Add Property",
             link: '/dashboard/AddProperty',
             icon: 'fa fa-list',
-            visiblity: AgentRole()
+            visiblity: AgentRole() || SuperAdmin()
         }, {
             name: "Payments",
             link: '/dashboard/PaymentMethod',
             icon: 'fa fa-credit-card',
-            visiblity: AgentRole()
+            visiblity: AgentRole() || SuperAdmin()
         }
         , {
             name: "Change Password",
