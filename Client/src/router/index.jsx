@@ -14,6 +14,8 @@ import AgentDetails from '../pages/AgentDetails';
 import { AuthRoutes } from '../utils/ProtectedRoutes';
 import AllSocieties from '../pages/AllSocieties';
 import AllBlocks from '../pages/AllBlocks';
+import AllPhases from '../pages/AllPhases';
+
 const Router = () => {
   return (
     <Switch>
@@ -31,6 +33,7 @@ const Router = () => {
       <Route exact path="/coming-soon" component={ComingSoon} />
       <Route exact path="/allsocieties" component={AllSocieties} />
       <Route exact path="/allblocks" component={AllBlocks} />
+      <Route exact path="/all-phases" component={AllPhases} />
 
     </Switch>
   );
