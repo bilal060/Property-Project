@@ -22483,34 +22483,34 @@ form label.error {
   text-transform: capitalize;
 }
 
-.inner-pages .property-form-group p input {
+.inner-pages .property-form-group  input {
   border: 1px solid #ddd;
   height: 50px;
   padding: 10px;
   width: 100%;
 }
 
-.inner-pages .property-form-group p.no-mb,
-.inner-pages .property-form-group p.no-mb input {
+.inner-pages .property-form-group .no-mb,
+.inner-pages .property-form-group .no-mb input {
   margin-bottom: 0px;
 }
 
 @media screen and (max-width: 991px) {
-  .inner-pages .property-form-group p.no-mb,
-  .inner-pages .property-form-group p.no-mb input {
+  .inner-pages .property-form-group .no-mb,
+  .inner-pages .property-form-group .no-mb input {
     margin-bottom: 20px;
   }
 
-  .inner-pages .property-form-group p.no-mb.first input {
+  .inner-pages .property-form-group .no-mb.first input {
     margin-bottom: 20px !important;
   }
 
-  .inner-pages .property-form-group p.no-mb.last:last-child,
-  .inner-pages .property-form-group p.no-mb input:last-child {
+  .inner-pages .property-form-group .no-mb.last:last-child,
+  .inner-pages .property-form-group .no-mb input:last-child {
     margin-bottom: 0px;
   }
 }
-.inner-pages .property-form-group p textarea {
+.inner-pages .property-form-group  textarea {
   border: 1px solid #ddd;
   height: 180px;
   padding: 10px;
@@ -22523,7 +22523,7 @@ form label.error {
   padding: 30px;
 }
 
-.inner-pages .property-form-group p,
+.inner-pages .property-form-group ,
 .property-form-group .dropdown.faq-drop {
   margin-bottom: 20px;
 }
@@ -25189,4 +25189,35 @@ section.ui-element {
 
 input[name="userType"] {
 	accent-color: green;
+}
+
+.categories,.selectBoxes select {
+     margin: 0px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #757575;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+
+
+option {
+    cursor: pointer;
+    font-weight: 400 !important;
+    line-height: 40px !important;
+    list-style: none !important;
+    min-height: 40px !important;
+    outline: none !important;
+    padding-left: 18px !important;
+    padding-right: 29px !important;
+    text-align: left !important;
+    -webkit-transition: all 0.2s !important;
+    transition: all 0.2s !important;
 }

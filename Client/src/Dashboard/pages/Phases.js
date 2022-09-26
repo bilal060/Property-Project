@@ -131,7 +131,7 @@ export default function AllPhases() {
                               return <option key={key} value={item._id}>{item.name}</option>
                             })}
                           </Field>
-                          <ErrorMessage component="div" name="Society" className="invalid-feedback" />
+                          <ErrorMessage component="div" name="society" className="invalid-feedback" />
 
                         </div>
 

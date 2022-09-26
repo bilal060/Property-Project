@@ -14,12 +14,9 @@ const helpers = require('./helpers');
 
 const erpApiRouter = require('./routes/erpRoutes/erpApi');
 const erpAuthRouter = require('./routes/erpRoutes/erpAuth');
-const agentRouter = require('./routes/agentRoutes/agentRoutes');
-
 
 const errorHandlers = require('./handlers/errorHandlers');
 
-const { isValidAdminToken, isValidAgent } = require('./middlewares/Authentication');
 
 // create our Express app
 const app = express();
@@ -79,12 +76,6 @@ app.use(
 app.use(
   '/api',
   erpApiRouter
-);
-
-app.use(
-  '/api/agent',
-  isValidAgent,
-  agentRouter
 );
 
 // inside public directory.

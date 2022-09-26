@@ -17,7 +17,6 @@ function Login() {
         dispatch(loginAction(response.data.result));
       })
       .catch((error) => {
-        console.log(error);
       });
   };
 

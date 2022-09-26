@@ -1,425 +1,569 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { FormDataMultipleFiles, PropertySchema } from '../../utils';
+import { getAllSocietiesAction } from '../../store/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getBlockBySocietyAndPhaseIdApi,
+  getPhaseBySocietyidApi,
+  addNewPropertyApi,
+} from '../../store/api';
+import Dropzone, { useDropzone } from 'react-dropzone';
 export default function UserAddProperty() {
+  const allSocieties = useSelector((state) => state?.AllSocieties);
+  const dispatch = useDispatch();
+  const [phasesBySociety, setPhasesBySociety] = useState([]);
+  const [BlockBySocietyAndPhaseId, setBlockBySocietyAndPhaseId] = useState([]);
+  const [photos, setPhotos] = useState([]);
+  const Features = [
+    'Air Conditioning',
+    'Swimming Pool',
+    'Central Heating',
+    'Laundry Room',
+    'Gym',
+    'Cinema',
+    'Alarm',
+    'Window Covering',
+    'Refrigerator',
+    'TV Cable & WIFI',
+  ];
+  useEffect(() => {
+    dispatch(getAllSocietiesAction());
+  }, []);
+  const [initialValues, setInitialValues] = useState({
+    title: '',
+    description: '',
+    status: '',
+    type: '',
+    rooms: 0,
+    price: 0,
+    area: 0,
+    address: '',
+    city: '',
+    state: '',
+    country: '',
+    latitude: '',
+    longitude: '',
+    age: '',
+    bathrooms: 0,
+    condition: '',
+    ctInfoName: '',
+    ctInfoUsername: '',
+    ctInfoEmail: '',
+    ctInfoPhone: '',
+    society: '',
+    phase: '',
+    block: '',
+    features: [],
+    photo: [],
+  });
+  const onSubmit = (values, props) => {
+    addNewPropertyApi(FormDataMultipleFiles(values))
+      .then((response) => {
+        props.resetForm();
+        
+      })
+      .catch((err) => {});
+  };
+  const SelectSociety = (value) => {
+    setPhasesBySociety([]);
+    setBlockBySocietyAndPhaseId([]);
+    if (value !== 'Select Society') {
+      getPhaseBySocietyidApi(value).then((res) => {
+        setPhasesBySociety(res.data.result);
+      });
+    }
+  };
+
+  const SelectPhase = (society, value) => {
+    if (value !== 'Select Phase') {
+      getBlockBySocietyAndPhaseIdApi(society, value).then((res) => {
+        setBlockBySocietyAndPhaseId(res.data.result);
+      });
+    }
+  };
+
   return (
-    <div className="col-lg-9 col-md-12 col-xs-12 royal-add-property-area section_100 pl-0 user-dash2">
-      <div className="single-add-property">
-        <h3>Property description and price</h3>
-        <div className="property-form-group">
-          <form>
-            <div className="row">
-              <div className="col-md-12">
-                <p>
-                  <label htmlFor="title">Property Title</label>
-                  <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    placeholder="Enter your property title"
-                  />
-                </p>
+    <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={PropertySchema}>
+      {({ touched, errors, isSubmitting, values, setFieldValue }) => (
+        <Form className="col-lg-9 col-md-12 mb-2 col-xs-12 royal-add-property-area section_100 pl-0 user-dash2">
+          <div className="single-add-property">
+            <h3>Property description and price</h3>
+            <div className="property-form-group">
+              <div className="row">
+                <div className="col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="title">Property Title</label>
+                    <Field
+                      type="text"
+                      name="title"
+                      id="title"
+                      placeholder="Enter your property title"
+                    />
+                    <ErrorMessage component="div" name="title" className="text-danger" />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <p>
-                  <label htmlFor="description">Property Description</label>
-                  <textarea
-                    id="description"
-                    name="pro-dexc"
-                    placeholder="Describe about your property"
-                    defaultValue={''}
-                  />
-                </p>
+              <div className="row">
+                <div className="col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="description">Property Description</label>
+                    <Field
+                      as="textarea"
+                      id="description"
+                      name="description"
+                      placeholder="Describe about your property"
+                    />
+                    <ErrorMessage component="div" name="description" className="text-danger" />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-4 col-md-12 dropdown faq-drop">
-                <div className="form-group categories">
-                  <div className="nice-select form-control wide" tabIndex={0}>
-                    <span className="current">Select status</span>
-                    <ul className="list">
-                      <li data-value={1} className="option">
+              <div className="row">
+                <div className="col-lg-4 col-md-12 mb-2">
+                  <div className="form-group categories">
+                    <Field as="select" name="status" class="form-control">
+                      <option className="option">Select Status</option>
+                      <option className="option" value="rent">
                         Rent
-                      </li>
-                      <li data-value={2} className="option">
+                      </option>
+                      <option className="option" value="sale">
                         Sale
-                      </li>
-                    </ul>
+                      </option>
+                    </Field>
+                    <ErrorMessage component="div" name="status" className="text-danger" />
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-12 dropdown faq-drop">
-                <div className="form-group categories">
-                  <div className="nice-select form-control wide" tabIndex={0}>
-                    <span className="current">Type</span>
-                    <ul className="list">
-                      <li data-value={1} className="option">
+                <div className="col-lg-4 col-md-12 mb-2">
+                  <div className="form-group categories">
+                    <Field as="select" name="type" class="form-control">
+                      <option className="option">Select Type</option>
+                      <option className="option" value="house">
                         house
-                      </li>
-                      <li data-value={2} className="option">
+                      </option>
+                      <option className="option" value="commercial">
                         commercial
-                      </li>
-                      <li data-value={3} className="option">
+                      </option>
+                      <option className="option" value="apartment">
                         apartment
-                      </li>
-                      <li data-value={4} className="option">
+                      </option>
+                      <option className="option" value="lot">
                         lot
-                      </li>
-                      <li data-value={5} className="option">
+                      </option>
+                      <option className="option" value="garage">
                         garage
-                      </li>
-                    </ul>
+                      </option>
+                    </Field>
+                    <ErrorMessage component="div" name="type" className="text-danger" />
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-12 dropdown faq-drop">
-                <div className="form-group categories">
-                  <div className="nice-select form-control wide" tabIndex={0}>
-                    <span className="current">Rooms</span>
-                    <ul className="list">
-                      <li data-value={1} className="option">
+                <div className="col-lg-4 col-md-12 mb-2">
+                  <div className="form-group categories">
+                    <Field
+                      as="select"
+                      onChange={(e) => {
+                        setFieldValue('rooms', parseInt(e.target.value));
+                      }}
+                      name="rooms"
+                      class="form-control"
+                    >
+                      <option className="option" value={1}>
                         1
-                      </li>
-                      <li data-value={2} className="option">
+                      </option>
+                      <option className="option" value={2}>
                         2
-                      </li>
-                      <li data-value={3} className="option">
+                      </option>
+                      <option className="option" value={3}>
                         3
-                      </li>
-                      <li data-value={4} className="option">
+                      </option>
+                      <option className="option" value={4}>
                         4
-                      </li>
-                      <li data-value={5} className="option">
+                      </option>
+                      <option className="option" value={5}>
                         5
+                      </option>
+                    </Field>
+                    <ErrorMessage component="div" name="rooms" className="text-danger" />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="no-mb">
+                    <label htmlFor="price">Price</label>
+                    <Field type="number" name="price" placeholder="USD" id="price" />
+                  </div>
+                  <ErrorMessage component="div" name="price" className="text-danger" />
+                </div>
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="no-mb last">
+                    <label htmlFor="area">Area</label>
+                    <Field type="Number" name="area" placeholder="Sqft" id="area" />
+                  </div>
+                  <ErrorMessage component="div" name="area" className="text-danger" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="single-add-property">
+            <h3>property Media</h3>
+            <div className="property-form-group">
+              <div className="row">
+                <div className="col-md-12 mb-2">
+                  <UploadComponent
+                    photos={photos}
+                    setPhotos={setPhotos}
+                    setFieldValue={setFieldValue}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="single-add-property">
+            <h3>property Location</h3>
+            <div className="property-form-group">
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="selectBoxes">
+                    <label htmlFor="address">Society</label>
+                    <Field
+                      as="select"
+                      className="form-control"
+                      onChange={(e) => {
+                        SelectSociety(e.target.value);
+                        setFieldValue('society', e.target.value);
+                      }}
+                      name="society"
+                    >
+                      <option>Select Society</option>
+                      {allSocieties?.data?.map((item, key) => {
+                        return (
+                          <option key={key} value={item._id}>
+                            {item.name}
+                          </option>
+                        );
+                      })}
+                    </Field>
+                    <ErrorMessage component="div" name="society" className="text-danger" />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="selectBoxes">
+                    <label htmlFor="address">Phase</label>
+                    <Field
+                      as="select"
+                      className="form-control"
+                      onChange={(e) => {
+                        SelectPhase(values.society, e.target.value);
+                        setFieldValue('phase', e.target.value);
+                      }}
+                      name="phase"
+                    >
+                      <option>Select Phase</option>
+                      {phasesBySociety?.map((item, key) => {
+                        return (
+                          <option key={key} value={item._id}>
+                            {item.name}
+                          </option>
+                        );
+                      })}
+                    </Field>
+                    <ErrorMessage component="div" name="phase" className="text-danger" />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="selectBoxes">
+                    <label htmlFor="address">Block</label>
+                    <Field as="select" name="block" class="form-control">
+                      <option className="option">Select Block</option>
+                      {BlockBySocietyAndPhaseId?.map((item, key) => {
+                        return (
+                          <option key={key} value={item._id}>
+                            {item.name}
+                          </option>
+                        );
+                      })}
+                    </Field>
+                    <ErrorMessage component="div" name="block" className="text-danger" />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="address">Address</label>
+                    <Field
+                      type="text"
+                      name="address"
+                      placeholder="Enter Your Address"
+                      id="address"
+                    />
+                    <ErrorMessage component="div" name="address" className="text-danger" />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="city">City</label>
+                    <Field type="text" name="city" placeholder="Enter Your City" id="city" />
+                    <ErrorMessage component="div" name="city" className="text-danger" />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="state">State</label>
+                    <Field type="text" name="state" placeholder="Enter Your State" id="state" />
+                    <ErrorMessage component="div" name="state" className="text-danger" />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="country">Country</label>
+                    <Field
+                      type="text"
+                      name="country"
+                      placeholder="Enter Your Country"
+                      id="country"
+                    />
+                    <ErrorMessage component="div" name="country" className="text-danger" />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="no-mb first">
+                    <label htmlFor="latitude">Google Maps latitude</label>
+                    <Field
+                      type="text"
+                      name="latitude"
+                      placeholder="Google Maps latitude"
+                      id="latitude"
+                    />
+                    <ErrorMessage component="div" name="latitude" className="text-danger" />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="no-mb last">
+                    <label htmlFor="longitude">Google Maps longitude</label>
+                    <Field
+                      type="text"
+                      name="longitude"
+                      placeholder="Google Maps longitude"
+                      id="longitude"
+                    />
+                    <ErrorMessage component="div" name="longitude" className="text-danger" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="single-add-property">
+            <h3>Extra Information</h3>
+            <div className="property-form-group">
+              <div className="row align-content-center">
+                <div className="col-lg-4 col-md-12 mb-2">
+                  <div className="form-group categories">
+                    <Field as="select" name="age" class="form-control">
+                      <option className="option">Select Age</option>
+                      <option className="option" value="0-1">
+                        0-1 years
+                      </option>
+                      <option className="option" value="0-5">
+                        0-5 years
+                      </option>
+                      <option className="option" value="0-10">
+                        0-10 years
+                      </option>
+                      <option className="option" value="0-15">
+                        0-15 years
+                      </option>
+                      <option className="option" value="0-20">
+                        0-20 years
+                      </option>
+                      <option className="option" value="0-50">
+                        0-50 years
+                      </option>
+                      <option className="option" value="50">
+                        50+ years
+                      </option>
+                    </Field>
+                    <ErrorMessage component="div" name="age" className="text-danger" />
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-12 mb-2 ">
+                  <div className="form-group categories">
+                    <Field
+                      as="select"
+                      onChange={(e) => {
+                        setFieldValue('bathrooms', parseInt(e.target.value));
+                      }}
+                      name="bathrooms"
+                      class="form-control"
+                    >
+                      <option className="option" value={1}>
+                        1
+                      </option>
+                      <option className="option" value={2}>
+                        2
+                      </option>
+                      <option className="option" value={3}>
+                        3
+                      </option>
+                      <option className="option" value={4}>
+                        4
+                      </option>
+                      <option className="option" value={5}>
+                        5
+                      </option>
+                    </Field>
+                    <ErrorMessage component="div" name="bathrooms" className="text-danger" />
+                  </div>
+                </div>
+                <div className="col-lg-4 col-md-12 mb-2 dropdown faq-drop">
+                  <div className="form-group categories">
+                    <Field as="select" name="condition" class="form-control">
+                      <option className="option">Select Condition</option>
+                      <option className="option" value="furnished">
+                        Furnished
+                      </option>
+                      <option className="option" value="unfurnished">
+                        Unfurnished
+                      </option>
+                    </Field>
+                    <ErrorMessage component="div" name="condition" className="text-danger" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="single-add-property">
+            <h3>Property Features</h3>
+            <div className="property-form-group">
+              <div className="row">
+                <div className="col-md-12 mb-2">
+                  <ul className="pro-feature-add pl-0">
+                    {Features.map((item, key) => (
+                      <li className="fl-wrap filter-tags clearfix">
+                        <div className="checkboxes float-left">
+                          <div className="filter-tags-wrap">
+                            <Field
+                              id={`check-${key}`}
+                              type="checkbox"
+                              name="features"
+                              value={item}
+                            />
+                            <label htmlFor={`check-${key}`}>{item}</label>
+                          </div>
+                        </div>
                       </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-6 col-md-12">
-                <p className="no-mb">
-                  <label htmlFor="price">Price</label>
-                  <input type="text" name="price" placeholder="USD" id="price" />
-                </p>
-              </div>
-              <div className="col-lg-6 col-md-12">
-                <p className="no-mb last">
-                  <label htmlFor="area">Area</label>
-                  <input type="text" name="area" placeholder="Sqft" id="area" />
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div className="single-add-property">
-        <h3>property Media</h3>
-        <div className="property-form-group">
-          <div className="row">
-            <div className="col-md-12">
-              <form action="https://code-theme.com/file-upload" className="dropzone" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="single-add-property">
-        <h3>property Location</h3>
-        <div className="property-form-group">
-          <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <p>
-                <label htmlFor="address">Address</label>
-                <input type="text" name="address" placeholder="Enter Your Address" id="address" />
-              </p>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              <p>
-                <label htmlFor="city">City</label>
-                <input type="text" name="city" placeholder="Enter Your City" id="city" />
-              </p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <p>
-                <label htmlFor="state">State</label>
-                <input type="text" name="state" placeholder="Enter Your State" id="state" />
-              </p>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              <p>
-                <label htmlFor="country">Country</label>
-                <input type="text" name="country" placeholder="Enter Your Country" id="country" />
-              </p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <p className="no-mb first">
-                <label htmlFor="latitude">Google Maps latitude</label>
-                <input
-                  type="text"
-                  name="latitude"
-                  placeholder="Google Maps latitude"
-                  id="latitude"
-                />
-              </p>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              <p className="no-mb last">
-                <label htmlFor="longitude">Google Maps longitude</label>
-                <input
-                  type="text"
-                  name="longitude"
-                  placeholder="Google Maps longitude"
-                  id="longitude"
-                />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="single-add-property">
-        <h3>Extra Information</h3>
-        <div className="property-form-group">
-          <div className="row">
-            <div className="col-lg-4 col-md-12 dropdown faq-drop">
-              <div className="form-group categories">
-                <div className="nice-select form-control wide" tabIndex={0}>
-                  <span className="current">Select Age</span>
-                  <ul className="list">
-                    <li data-value={1} className="option">
-                      0-1 years
-                    </li>
-                    <li data-value={2} className="option">
-                      0-5 years
-                    </li>
-                    <li data-value={1} className="option">
-                      0-10 years
-                    </li>
-                    <li data-value={2} className="option">
-                      0-15 years
-                    </li>
-                    <li data-value={1} className="option">
-                      0-20 years
-                    </li>
-                    <li data-value={2} className="option">
-                      0-50 years
-                    </li>
-                    <li data-value={1} className="option">
-                      50+ years
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-12 dropdown faq-drop">
-              <div className="form-group categories">
-                <div className="nice-select form-control wide" tabIndex={0}>
-                  <span className="current">Select Rooms</span>
-                  <ul className="list">
-                    <li data-value={1} className="option">
-                      1
-                    </li>
-                    <li data-value={2} className="option">
-                      2
-                    </li>
-                    <li data-value={1} className="option">
-                      3
-                    </li>
-                    <li data-value={2} className="option">
-                      4
-                    </li>
-                    <li data-value={1} className="option">
-                      5
-                    </li>
-                    <li data-value={2} className="option">
-                      6
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-12 dropdown faq-drop">
-              <div className="form-group categories">
-                <div className="nice-select form-control wide" tabIndex={0}>
-                  <span className="current">Select Bathrooms</span>
-                  <ul className="list">
-                    <li data-value={1} className="option">
-                      1
-                    </li>
-                    <li data-value={2} className="option">
-                      2
-                    </li>
-                    <li data-value={1} className="option">
-                      3
-                    </li>
-                    <li data-value={2} className="option">
-                      4
-                    </li>
-                    <li data-value={1} className="option">
-                      5
-                    </li>
-                    <li data-value={2} className="option">
-                      6
-                    </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="single-add-property">
-        <h3>Property Features</h3>
-        <div className="property-form-group">
-          <div className="row">
-            <div className="col-md-12">
-              <ul className="pro-feature-add pl-0">
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-a" type="checkbox" name="check" />
-                      <label htmlFor="check-a">Air Conditioning</label>
-                    </div>
+          <div className="single-add-property">
+            <h3>Contact Information</h3>
+            <div className="property-form-group">
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="con-name">Name</label>
+                    <Field
+                      type="text"
+                      placeholder="Enter Your Name"
+                      id="con-name"
+                      name="ctInfoName"
+                    />
+                    <ErrorMessage component="div" name="ctInfoName" className="text-danger" />
                   </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-b" type="checkbox" name="check" />
-                      <label htmlFor="check-b">Swimming Pool</label>
-                    </div>
+                </div>
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div>
+                    <label htmlFor="con-user">Username</label>
+                    <Field
+                      type="text"
+                      placeholder="Enter Your Username"
+                      id="con-user"
+                      name="ctInfoUsername"
+                    />
+                    <ErrorMessage component="div" name="ctInfoUsername" className="text-danger" />
                   </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-c" type="checkbox" name="check" />
-                      <label htmlFor="check-c">Central Heating</label>
-                    </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="no-mb first">
+                    <label htmlFor="con-email">Email</label>
+                    <Field
+                      type="email"
+                      placeholder="Enter Your Email"
+                      id="con-email"
+                      name="ctInfoEmail"
+                    />
+                    <ErrorMessage component="div" name="ctInfoEmail" className="text-danger" />
                   </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-d" type="checkbox" name="check" />
-                      <label htmlFor="check-d">Laundry Room</label>
-                    </div>
+                </div>
+                <div className="col-lg-6 col-md-12 mb-2">
+                  <div className="no-mb last">
+                    <label htmlFor="con-phn">Phone</label>
+                    <Field
+                      type="text"
+                      placeholder="Enter Your Phone Number"
+                      id="con-phn"
+                      name="ctInfoPhone"
+                    />
+                    <ErrorMessage component="div" name="ctInfoPhone" className="text-danger" />
                   </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-e" type="checkbox" name="check" />
-                      <label htmlFor="check-e">Gym</label>
-                    </div>
-                  </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-g" type="checkbox" name="check" />
-                      <label htmlFor="check-g">Alarm</label>
-                    </div>
-                  </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-h" type="checkbox" name="check" />
-                      <label htmlFor="check-h">Window Covering</label>
-                    </div>
-                  </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-i" type="checkbox" name="check" />
-                      <label htmlFor="check-i">Refrigerator</label>
-                    </div>
-                  </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-j" type="checkbox" name="check" />
-                      <label htmlFor="check-j">TV Cable &amp; WIFI</label>
-                    </div>
-                  </div>
-                </li>
-                <li className="fl-wrap filter-tags clearfix">
-                  <div className="checkboxes float-left">
-                    <div className="filter-tags-wrap">
-                      <input id="check-k" type="checkbox" name="check" />
-                      <label htmlFor="check-k">Microwave</label>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="single-add-property">
-        <h3>Contact Information</h3>
-        <div className="property-form-group">
-          <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <p>
-                <label htmlFor="con-name">Name</label>
-                <input type="text" placeholder="Enter Your Name" id="con-name" name="con-name" />
-              </p>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              <p>
-                <label htmlFor="con-user">Username</label>
-                <input
-                  type="text"
-                  placeholder="Enter Your Username"
-                  id="con-user"
-                  name="con-user"
-                />
-              </p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <p className="no-mb first">
-                <label htmlFor="con-email">Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter Your Email"
-                  id="con-email"
-                  name="con-email"
-                />
-              </p>
-            </div>
-            <div className="col-lg-6 col-md-12">
-              <p className="no-mb last">
-                <label htmlFor="con-phn">Phone</label>
-                <input
-                  type="text"
-                  placeholder="Enter Your Phone Number"
-                  id="con-phn"
-                  name="con-phn"
-                />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="add-property-button pt-5">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="prperty-submit-button">
-                <button type="submit">Submit Property</button>
+            <div className="add-property-button pt-5">
+              <div className="row">
+                <div className="col-md-12 mb-2">
+                  <div className="prperty-submit-button">
+                    <button type="submit">Submit Property</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </Form>
+      )}
+    </Formik>
+  );
+}
+
+const UploadComponent = (props) => {
+  const { setFieldValue, photos, setPhotos } = props;
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    accept: 'image/*',
+    onDrop: (acceptedFiles) => {
+      setFieldValue('photo', []);
+      setPhotos([]);
+      setFieldValue('photo', acceptedFiles);
+      setPhotos(
+        acceptedFiles.map((file) => {
+          return URL.createObjectURL(file);
+        })
+      );
+    },
+  });
+  return (
+    <div>
+      <div {...getRootProps({ className: 'dropzone' })}>
+        <input {...getInputProps()} />
+        {photos?.length > 0 ? (
+          photos?.map((item, key) => {
+            return <li key={key}>{item}</li>;
+          })
+        ) : (
+          <p>Drag 'n' drop some files here, or click to select files</p>
+        )}
       </div>
     </div>
   );
-}
+};

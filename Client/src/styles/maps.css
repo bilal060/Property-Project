@@ -1292,6 +1292,10 @@
   margin-top: 5px;
   display: inline-block;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .dropzone:hover {
   border: 2px dashed #59b02c;
@@ -2310,7 +2314,6 @@ h4.sc-jb-title a:hover {
   .mob-mt {
     margin-bottom: 30px;
   }
- 
 }
 @media screen and (max-width: 991px) {
   .m-t-30 {

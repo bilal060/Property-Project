@@ -146,7 +146,7 @@ export default function AllBlocks() {
                               return <option key={key} value={item._id}>{item.name}</option>
                             })}
                           </Field>
-                          <ErrorMessage component="div" name="Society" className="invalid-feedback" />
+                        <ErrorMessage component="div" name="society" className="invalid-feedback" />
 
                         </div>
                         <div className="form-group col-md-6">
@@ -157,7 +157,7 @@ export default function AllBlocks() {
                               return <option key={key} value={item._id}>{item.name}</option>
                             })}
                           </Field>
-                          <ErrorMessage component="div" name="Society" className="invalid-feedback" />
+                        <ErrorMessage component="div" name="phase" className="invalid-feedback" />
 
                         </div>
 

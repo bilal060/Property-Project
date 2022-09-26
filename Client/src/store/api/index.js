@@ -2,18 +2,12 @@ import { api } from "./../interceptor/interceptor";
 // var moment = require("moment-timezone");
 export const API_URL = process.env.REACT_APP_API_URL;
 export var countryInfo;
-export var token;
-
-
-if (typeof window !== "undefined") {
-  token = localStorage.getItem("token");
-}
-
-export const config = {};
+export var token = localStorage.getItem("token");
+let config = {};
 if (token) {
+  console.log(token)
   config.headers = { Authorization: token };
 }
-
 // User Login API
 export const userLoginApi = async (Data) => {
   const res = await api.post("/login", Data);
@@ -128,5 +122,42 @@ export const getAllBlocksApi = async () => {
 
 export const deleteBlockApi = async (id) => {
   const res = api.delete(`/block/delete/${id}`, config);
+  return res;
+}
+
+export const getBlockBySocietyAndPhaseIdApi = async (society, phase) => {
+  const res = await api.get(`/block/list?society=${society}&phase=${phase}`);
+  return res;
+}
+
+
+// Property Api
+export const addNewPropertyApi = async (Data) => {
+  const res = await api.post("/property/create", Data, config);
+  return res;
+};
+
+
+export const editPropertyApi = async (id, Data) => {
+  console.log(id, Data)
+  const res = await api.patch(`/property/update/${id}`, Data, config);
+  return res;
+};
+
+
+
+export const getAllPropertiesApi = async () => {
+  const res = await api.get("/property/list");
+  return res;
+};
+
+
+export const deletePropertyApi = async (id) => {
+  const res = api.delete(`/property/delete/${id}`, config);
+  return res;
+}
+
+export const getPropertyBySocietyPhaseAndBlockIdApi = async (society, phase, block) => {
+  const res = await api.get(`/property/list?society=${society}&phase=${phase}&block=${block}`);
   return res;
 }

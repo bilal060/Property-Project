@@ -15,20 +15,17 @@ api.interceptors.request.use((request) => {
 });
 api.interceptors.response.use(
   (response) => {
-    switch (response.status) {
-      case 200:
-        return response;
-        break;
-      default:
-      // code block
+    if (response.status === 200) {
+      return response;
+    } else {
+      return response
     }
-
-    return response;
   },
   function (error) {
     switch (error?.response?.status) {
-      case 403:
-        //authenticationRoute();
+      case 401:
+        // localStorage.clear();
+        // window.location.href = '/'
         break;
       case 500:
         // code block

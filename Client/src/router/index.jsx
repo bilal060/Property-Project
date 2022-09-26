@@ -20,9 +20,9 @@ const Router = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/AllProperties" component={AllProperties} />
+      <Route exact path="/allproperties" component={AllProperties} />
       {/* <Route exact path="/Dashboard" component={Dashboard}/> */}
-      <Route exact path="/AllAgents" component={AllAgents} />
+      <Route exact path="/allagents" component={AllAgents} />
       <Route exact path="/propertydetails" component={SingleProperty} />
       <Route exact path="/agentdetails" component={AgentDetails} />
       <AuthRoutes exact path="/login" component={Login} />
@@ -33,8 +33,7 @@ const Router = () => {
       <Route exact path="/coming-soon" component={ComingSoon} />
       <Route exact path="/allsocieties" component={AllSocieties} />
       <Route exact path="/allblocks" component={AllBlocks} />
-      <Route exact path="/all-phases" component={AllPhases} />
-
+      <Route exact path="/allphases" component={AllPhases} />
     </Switch>
   );
 };

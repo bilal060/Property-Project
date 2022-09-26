@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const { stubFalse } = require('lodash');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 require('dotenv').config({ path: '.variables.env' });
@@ -104,7 +103,7 @@ exports.isValidAgent = async (req, res, next) => {
                 jwtExpired: true,
             });
         else {
-            req.agent = agent;
+            req.user = user;
             next();
         }
     } catch (err) {

@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SideBarRoutes from './SideBarRoutes';
 import Hooks from '../../../hooks'
+import { useSelector } from 'react-redux';
 
 export default function Sidebar() {
+  const userinfo = useSelector((state) => state.UserLogin.data.user);
+
   const SideBarRoute = SideBarRoutes();
   const { ActivatedRoutes, Logout } = Hooks();
 
@@ -24,7 +27,7 @@ export default function Sidebar() {
           />
         </div>
         <div className="active-user">
-          <h2>Mary Smith</h2>
+          <h2>{`${userinfo?.firstName} ${userinfo?.lastName}`}</h2>
         </div>
         <div className="detail clearfix">
           <ul className="mb-0">

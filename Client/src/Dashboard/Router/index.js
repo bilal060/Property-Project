@@ -17,16 +17,16 @@ const UserRouter = () => {
     return (
         <Switch>
             <ProtectedRoutes exact path="/dashboard" component={Dashboard} />
-            <AuthenticatedRoutes exact path="/dashboard/Profile" component={UserProfile} />
-            <ProtectedRoutes exact path="/dashboard/Properties" component={UserProperties} />
-            <AuthenticatedRoutes exact path="/dashboard/FavProperties" component={UserFavoriteProperties} />
-            <ProtectedRoutes exact path="/dashboard/AddProperty" component={UserAddProperty} />
-            <ProtectedRoutes exact path="/dashboard/PaymentMethod" component={UserPaymentMethod} />
-            <ProtectedRoutes exact path="/dashboard/Invoice" component={UserInvoice} />
-            <ProtectedRoutes exact path="/dashboard/AllSocieties" component={AllSocieties} />
-            <ProtectedRoutes exact path="/dashboard/Blocks" component={AllBlocks} />
-            <ProtectedRoutes exact path="/dashboard/Phases" component={AllPhases} />
-            <AuthenticatedRoutes exact path="/dashboard/ChangePassword" component={UserChangePassword} />
+            <AuthenticatedRoutes exact path="/dashboard/profile" component={UserProfile} />
+            <ProtectedRoutes exact path="/dashboard/properties" component={UserProperties} />
+            <AuthenticatedRoutes exact path="/dashboard/favproperties" component={UserFavoriteProperties} />
+            <ProtectedRoutes exact path="/dashboard/addproperty" component={UserAddProperty} />
+            <ProtectedRoutes exact path="'/dashboard/paymentmethod" component={UserPaymentMethod} />
+            <ProtectedRoutes exact path="/dashboard/invoice" component={UserInvoice} />
+            <ProtectedRoutes exact path="/dashboard/allsocieties" component={AllSocieties} />
+            <ProtectedRoutes exact path="/dashboard/blocks" component={AllBlocks} />
+            <ProtectedRoutes exact path="/dashboard/phases" component={AllPhases} />
+            <AuthenticatedRoutes exact path="/dashboard/changepassword" component={UserChangePassword} />
         </Switch>
     );
 };

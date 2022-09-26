@@ -48,7 +48,6 @@ exports.create = async (Model, req, res) => {
     const body = { ...req.body }
     body.createdBy = req.user._id.toString()
     const result = await new Model(body).save();
-    console.log(result);
     // Returning successfull response
     return res.status(200).json({
       success: true,
@@ -251,7 +250,6 @@ exports.list = async (Model, req, res) => {
  */
 
 exports.search = async (Model, req, res) => {
-  // console.log(req.query.fields)
   if (req.query.q === undefined || req.query.q.trim() === '') {
     return res
       .status(202)
@@ -271,7 +269,6 @@ exports.search = async (Model, req, res) => {
   for (const field of fieldsArray) {
     fields.$or.push({ [field]: { $regex: new RegExp(req.query.q, 'i') } });
   }
-  // console.log(fields)
   try {
     let results = await Model.find(fields).where('removed', false).limit(10);
 

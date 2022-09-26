@@ -504,7 +504,7 @@ export default function FeatureProperties() {
             </div>
           </div>
           <div className="bg-all pt-3">
-            <Link to="/AllProperties" className="btn btn-outline-light">
+            <Link to="/allproperties" className="btn btn-outline-light">
               View More
             </Link>
           </div>

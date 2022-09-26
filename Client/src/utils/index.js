@@ -61,12 +61,55 @@ export const BlocksValidationSchema = Yup.object().shape({
 
 });
 
+export const PropertySchema = Yup.object().shape({
+    title: Yup.string().required('Title is Required'),
+    description: Yup.string().required('Description is Required'),
+    status: Yup.string().required('Status is Required'),
+    type: Yup.string().required('Type is Required'),
+    rooms: Yup.number().required('Select Number Of Rooms'),
+    price: Yup.number().required('Price is Required'),
+    area: Yup.string().required('Area is Required'),
+    address: Yup.string().required('Address is Required'),
+    city: Yup.string().required('City is Required'),
+    state: Yup.string().required('State is Required'),
+    country: Yup.string().required('Country is Required'),
+    latitude: Yup.string().required('Latitude is Required'),
+    longitude: Yup.string().required('Longitude is Required'),
+    age: Yup.string().required('Age is Required'),
+    bathrooms: Yup.number().required('Select Number of Bathrooms'),
+    condition: Yup.string().required('Select Room Condition'),
+    ctInfoName: Yup.string().required('Name is Required'),
+    ctInfoUsername: Yup.string().required('Username is Required'),
+    ctInfoEmail: Yup.string().required('Email is Required'),
+    ctInfoPhone: Yup.string().required('Phone is Required'),
+    society: Yup.string().required('Society is Required'),
+    phase: Yup.string().required('Phase is Required'),
+    block: Yup.string().required('Block is Required'),
+    photo: Yup.array().required('Images Are Required'),
+})
 export const FormDataFunc = (Data) => {
-    console.log(Data)
     const formData = new FormData();
     var objMap = new Map(Object.entries(Data));
     objMap.forEach((item, key) => {
         formData.append(key, item)
+    });
+    return formData;
+}
+
+
+export const FormDataMultipleFiles = (Data) => {
+    console.log("Data", Data.photo)
+    const formData = new FormData();
+    var objMap = new Map(Object.entries(Data));
+    objMap.forEach((item, key) => {
+        if (key === 'photo') {
+            Data?.photo?.map((itemm) => (
+                formData.append(key, itemm)
+            ))
+        }
+        if (key !== 'photo') {
+            formData.append(key, item)
+        }
     });
     return formData;
 }

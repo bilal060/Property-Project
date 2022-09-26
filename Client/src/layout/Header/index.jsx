@@ -71,7 +71,7 @@ export default function Header() {
                 <div className="right-side d-none d-none  d-lg-none d-xl-flex">
                   {/* Header Widget */}
                   <div className="header-widget">
-                    <Link to="/dashboard/AddProperty" className="button border">
+                    <Link to="/dashboard/addproperty" className="button border">
                       Add Listing
                       <i className="fas fa-laptop-house ml-2" />
                     </Link>
