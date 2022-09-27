@@ -34,14 +34,14 @@ export default function Header() {
               <nav id="navigation" className="style-1">
                 <ul id="responsive">
                   <li>
-                    <Link to="AllSocieties">Societies</Link>
+                    <Link to="societies">Societies</Link>
                   </li>
                   <li>
-                    <Link to="AllAgents">Agents</Link>
+                    <Link to="agents">Agents</Link>
                   </li>
 
                   <li>
-                    <Link to="AllProperties">Properties</Link>
+                    <Link to="properties">Properties</Link>
                   </li>
                   <li>
                     <a href="contact-us.html">Contact</a>

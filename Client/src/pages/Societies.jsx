@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllBlocksAction } from '../store/actions';
-import Society from '../components/AllSocieties/Index';
+import { getAllSocietiesAction } from '../store/actions';
+import Society from '../components/Societies/Index';
 
-export default function AllBlocks() {
-  const AllBlocks = useSelector((state) => state.AllBlocks);
+export default function AllSocieties() {
+  const allSocieties = useSelector((state) => state.AllSocieties);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllBlocksAction());
+    dispatch(getAllSocietiesAction());
   }, []);
   return (
     <>
@@ -16,13 +16,13 @@ export default function AllBlocks() {
         <div className="container-fluid">
           <div className="sec-title">
             <h2>
-              <span>All </span>Blocks
+              <span>All </span>Societies
             </h2>
-            <p>Properties In All Blocks.</p>
+            <p>Properties In All Societies.</p>
           </div>
           <div className="row">
-            {AllBlocks?.data?.map((item, key) => (
-              <Society item={item} />
+            {allSocieties?.data?.map((item, key) => (
+              <Society item={item}/>
             ))}
           </div>
         </div>

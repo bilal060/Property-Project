@@ -88,6 +88,10 @@ const PropertySchema = new mongoose.Schema({
     autopopulate: true,
     required: true,
   },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
   removed: {
     type: Boolean,
     default: false,

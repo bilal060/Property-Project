@@ -1,6 +1,8 @@
 import React from 'react'
+import moment from "moment"
+import { Link } from 'react-router-dom'
 
-export default function PropertyListCard() {
+export default function PropertyListCard({ item }) {
   return (
     <>
       <div
@@ -9,17 +11,18 @@ export default function PropertyListCard() {
           <div className="project-inner project-head">
             <div className="homes">
               {/* homes img */}
-              <a href="single-property-1.html" className="homes-img">
-                <div className="homes-tag button alt featured">Featured</div>
-                <div className="homes-tag button alt sale">For Sale</div>
-                <div className="homes-price">$9,000/mo</div>
-                <img src={process.env.PUBLIC_URL + "/images/blog/b-11.jpg"} alt="home-1" className="img-responsive" />
-              </a>
+              <Link to={`propertydetails/${item?._id}`} className="homes-img">
+                {item?.featured && <div className="homes-tag button alt featured">Featured</div>}
+                {item?.status === 'rent' && <div className="homes-tag button alt featured">For Rent</div>}
+                {item?.status === 'sale' && <div className="homes-tag button sale ">For Sale</div>}
+                <div className="homes-price">{item?.status === 'rent' ? `${item?.price}/mo` : item?.price}</div>
+                <img src={process.env.REACT_APP_IMAGE_URL + item?.photo[0]} alt="home-1" className="img-responsive" />
+              </Link>
             </div>
             <div className="button-effect">
-              <a href="single-property-1.html" className="btn">
+              <Link to={`propertydetails/${item?._id}`} className="btn">
                 <i className="fa fa-link" />
-              </a>
+              </Link>
               <a
                 href="https://www.youtube.com/watch?v=14semTlwyUY"
                 className="btn popup-video popup-youtube"
@@ -37,27 +40,27 @@ export default function PropertyListCard() {
       <div className="col-lg-8 col-md-12 homes-content pb-0 mb-44">
         {/* homes address */}
         <h3>
-          <a href="single-property-1.html">Real House Luxury Villa</a>
+          <Link to={`propertydetails/${item?._id}`}>{item?.title}</Link>
         </h3>
         <p className="homes-address mb-3">
-          <a href="single-property-1.html">
+          <Link to={`propertydetails/${item?._id}`}>
             <i className="fa fa-map-marker" />
-            <span>Est St, 77 - Central Park South, NYC</span>
-          </a>
+            <span>{`${item?.society.name} , ${item?.phase.name} , ${item?.block.name} ${item?.city} , ${item?.country}`}</span>
+          </Link>
         </p>
         {/* homes List */}
         <ul className="homes-list clearfix pb-3">
           <li className="the-icons">
             <i className="flaticon-bed mr-2" aria-hidden="true" />
-            <span>6 Bedrooms</span>
+            <span>{item?.rooms} Bedrooms</span>
           </li>
           <li className="the-icons">
             <i className="flaticon-bathtub mr-2" aria-hidden="true" />
-            <span>3 Bathrooms</span>
+            <span>{item?.bathrooms} Bathrooms</span>
           </li>
           <li className="the-icons">
             <i className="flaticon-square mr-2" aria-hidden="true" />
-            <span>720 sq ft</span>
+            <span>{item?.area} sq ft</span>
           </li>
           <li className="the-icons">
             <i className="flaticon-car mr-2" aria-hidden="true" />
@@ -69,7 +72,7 @@ export default function PropertyListCard() {
             <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="" className="mr-2" /> Lisa Jhonson
           </a>
           <span>
-            <i className="fa fa-calendar" /> 2 months ago
+            <i className="fas fa-calendar" /> {moment(item?.createdAt).fromNow()}
           </span>
         </div>
       </div>

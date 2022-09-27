@@ -1,5 +1,5 @@
 import React from 'react';
-import Schedule from '../AllAgents/Schedule'
+import Schedule from '../Agents/Schedule'
 export default function Index() {
   return (
     <>

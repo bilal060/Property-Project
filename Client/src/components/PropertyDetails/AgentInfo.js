@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AgentInfo() {
+export default function AgentInfo({ Details }) {
   return (
     <>
       <div className="widget-boxed mt-33 mt-5">
@@ -11,27 +11,27 @@ export default function AgentInfo() {
           <div className="sidebar-widget author-widget2">
             <div className="author-box clearfix">
               <img src={process.env.PUBLIC_URL + "/images/testimonials/ts-1.jpg"} alt="author-image" className="author__img" />
-              <h4 className="author__title">Lisa Clark</h4>
+              <h4 className="author__title">{`${Details?.createdBy?.firstName}  ${Details?.createdBy?.lastName}`}</h4>
               <p className="author__meta">Agent of Property</p>
             </div>
             <ul className="author__contact">
-              <li>
+              {/* <li>
                 <span className="la la-map-marker">
                   <i className="fa fa-map-marker" />
                 </span>
                 302 Av Park, New York
-              </li>
+              </li> */}
               <li>
                 <span className="la la-phone">
                   <i className="fa fa-phone" aria-hidden="true" />
                 </span>
-                <a href="#">(234) 0200 17813</a>
+                <a href="#">{Details.ctInfoPhone}</a>
               </li>
               <li>
                 <span className="la la-envelope-o">
                   <i className="fa fa-envelope" aria-hidden="true" />
                 </span>
-                <a href="#">lisa@gmail.com</a>
+                <a href="#">{Details?.ctInfoEmail}</a>
               </li>
             </ul>
             <div className="agent-contact-form-sidebar">

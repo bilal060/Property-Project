@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import AddReview from '../components/PropertyDetails/AddReview';
 import AgentInfo from '../components/PropertyDetails/AgentInfo';
 import Description from '../components/PropertyDetails/Description';
@@ -14,10 +15,21 @@ import Reviews from '../components/PropertyDetails/Reviews';
 import Index from '../components/PropertyDetails/Schedule';
 import SimilarProperties from '../components/PropertyDetails/SimilarProperties';
 import Special from '../components/PropertyDetails/Special';
-import React from 'react';
 import RecentProperties from '../components/PropertyDetails/RecentProperties';
-
+import { useParams } from 'react-router-dom';
+import { getPropertyDetailsApi } from '../store/api';
 export default function PropertyDetails() {
+  const [propertyDetails, setPropertyDetails] = useState({});
+  let { id } = useParams();
+  useEffect(() => {
+    if (id) {
+      getPropertyDetailsApi(id)
+        .then((res) => {
+          setPropertyDetails(res.data.result);
+        })
+        .catch((error) => {});
+    }
+  }, []);
   return (
     <>
       <div className="inner-pages sin-1 homepage-4 hd-white">
@@ -28,35 +40,35 @@ export default function PropertyDetails() {
                 <div className="col-lg-8 col-md-12 blog-pots">
                   <div className="row">
                     <div className="col-md-12">
-                      <Propertyname />
-                      <Gallery />
-                      <Description />
+                      <Propertyname Details={propertyDetails} />
+                      <Gallery Details={propertyDetails} />
+                      <Description Details={propertyDetails} />
                     </div>
                   </div>
-                  <Details />
-                  <Floorplans />
-                  <Nearby />
-                  <PropertyVideo />
-                  <Location />
-                  <Reviews />
-                  <AddReview />
+                  <Details Details={propertyDetails} />
+                  {/* <Floorplans Details={propertyDetails} /> */}
+                  {/* <Nearby Details={propertyDetails} /> */}
+                  {/* <PropertyVideo Details={propertyDetails} /> */}
+                  {/* <Location Details={propertyDetails} /> */}
+                  <Reviews Details={propertyDetails} />
+                  <AddReview Details={propertyDetails} />
                 </div>
                 <aside className="col-lg-4 col-md-12 car">
                   <div className="single widget">
-                    <Index />
+                    <Index Details={propertyDetails} />
                     <div className="sidebar">
-                      <AgentInfo />
+                      <AgentInfo Details={propertyDetails} />
                       <div className="main-search-field-2">
-                        <RecentProperties />
-                        <FeatureProperties />
-                        <Special />
-                        <PopularTags />
+                        <RecentProperties Details={propertyDetails} />
+
+                        {/* <Special Details={propertyDetails} /> */}
+                        <PopularTags Details={propertyDetails} />
                       </div>
                     </div>
                   </div>
                 </aside>
               </div>
-              <SimilarProperties />
+              <SimilarProperties Details={propertyDetails} />
             </div>
           </section>
         </div>

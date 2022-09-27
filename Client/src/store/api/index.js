@@ -146,8 +146,9 @@ export const editPropertyApi = async (id, Data) => {
 
 
 
-export const getAllPropertiesApi = async () => {
-  const res = await api.get("/property/list");
+export const getAllPropertiesApi = async (query) => {
+  const url = query ? `/property/list${query}` : '/property/list'
+  const res = await api.get(url);
   return res;
 };
 
@@ -159,5 +160,9 @@ export const deletePropertyApi = async (id) => {
 
 export const getPropertyBySocietyPhaseAndBlockIdApi = async (society, phase, block) => {
   const res = await api.get(`/property/list?society=${society}&phase=${phase}&block=${block}`);
+  return res;
+}
+export const getPropertyDetailsApi = async (propertyId) => {
+  const res = await api.get(`/property/read/${propertyId}`);
   return res;
 }

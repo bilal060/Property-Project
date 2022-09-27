@@ -48,6 +48,7 @@ exports.create = async (Model, req, res) => {
     const body = { ...req.body }
     body.createdBy = req.user._id.toString()
     const result = await new Model(body).save();
+    console.log(body)
     // Returning successfull response
     return res.status(200).json({
       success: true,
@@ -177,7 +178,7 @@ exports.delete = async (Model, req, res) => {
 
 exports.list = async (Model, req, res) => {
 
-  const { society, phase, block } = req.query
+  const { society, phase, block, featured } = req.query
   const page = req.query.page || 1;
   const limit = parseInt(req.query.items) || 10;
   const skip = page * limit - limit;
@@ -203,6 +204,9 @@ exports.list = async (Model, req, res) => {
       query.phase = phase
       query.block = block
       query.society = society
+    }
+    if (featured) {
+      query.featured = featured
     }
     //  Query the database for a list of all results
     const resultsPromise = Model.find(query)

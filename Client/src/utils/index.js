@@ -98,7 +98,6 @@ export const FormDataFunc = (Data) => {
 
 
 export const FormDataMultipleFiles = (Data) => {
-    console.log("Data", Data)
     const formData = new FormData();
     var objMap = new Map(Object.entries(Data));
     objMap.forEach((item, key) => {

@@ -1,9 +1,9 @@
 import Index from '../components/AgentListingRow/AgentListingRow';
-import FeatureProperties from '../components/AllAgents/FeatureProperties';
-import RecentProperties from '../components/AllAgents/RecentProperties';
-import Schedule from '../components/AllAgents/Schedule';
-import Special from '../components/AllAgents/Special';
-import Sorting from '../components/AllAgents/Sorting';
+import FeatureProperties from '../components/Agents/FeatureProperties';
+import RecentProperties from '../components/Agents/RecentProperties';
+import Schedule from '../components/Agents/Schedule';
+import Special from '../components/Agents/Special';
+import Sorting from '../components/Agents/Sorting';
 import React from 'react';
 
 export default function AgentListingGrid() {

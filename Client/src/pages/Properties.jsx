@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import PropertiesGridView from '../components/AllProperties/PropertiesGridView';
+import React, { useState, useEffect } from 'react';
+import PropertiesGridView from '../components/Properties/PropertiesGridView';
 import SearchForm from '../components/Home/SearchForm';
-import PropertiesListview from '../components/AllProperties/PropertiesListView';
+import PropertiesListview from '../components/Properties/PropertiesListView';
+import { getBlockBySocietyAndPhaseIdApi, getAllPropertiesApi } from '../store/api';
+import { useLocation } from 'react-router-dom';
 
 export default function PropertiesGrid() {
   const [Gridview, setGridView] = useState(true);
@@ -12,18 +14,41 @@ export default function PropertiesGrid() {
       setGridView(false);
     }
   };
+
+  const search = useLocation().search;
+  const society = new URLSearchParams(search).get('society');
+  const phase = new URLSearchParams(search).get('phase');
+  const block = new URLSearchParams(search).get('block');
+  const [AllProperties, setAllProperties] = useState([]);
+  useEffect(() => {
+    if (society !== null && phase !== null) {
+      getPropertyBySocietyPhaseAndBlockIdApi(society, phase, block)
+        .then((block) => {
+          setAllProperties(block?.data?.result);
+        })
+        .catch((error) => {});
+    } else {
+      getAllPropertiesApi()
+        .then((block) => {
+          console.log(block?.data?.result);
+          setAllProperties(block?.data?.result);
+        })
+        .catch((error) => {});
+    }
+  }, [society, phase]);
+
   return (
     <>
       <div className="inner-pages homepage-4 agents list hp-6  p-5 full hd-white">
         <section className="properties-list full featured portfolio blog  p-5">
           <div className="container-fluid mt-5">
-            <SearchForm />
+            {/* <SearchForm /> */}
             <section className="headings-2 pt-0">
               <div className="pro-wrapper">
                 <div className="detail-wrapper-body">
                   <div className="listing-title-bar">
                     <div className="text-heading text-left">
-                      <p className="font-weight-bold mb-0 mt-3">8 Search results</p>
+                      <p className="font-weight-bold mb-0 mt-3">{AllProperties.length} found</p>
                     </div>
                   </div>
                 </div>
@@ -74,7 +99,13 @@ export default function PropertiesGrid() {
               </div>
             </section>
 
-            <div className="row">{Gridview ? <PropertiesGridView /> : <PropertiesListview />}</div>
+            <div className="row">
+              {Gridview ? (
+                <PropertiesGridView AllProperties={AllProperties} />
+              ) : (
+                <PropertiesListview AllProperties={AllProperties} />
+              )}
+            </div>
           </div>
         </section>
       </div>

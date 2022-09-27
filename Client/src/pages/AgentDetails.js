@@ -9,7 +9,7 @@ import Reviews from '../components/PropertyDetails/Reviews';
 import SimilarProperties from '../components/AgentDetails/SimilarProperties';
 import Special from '../components/PropertyDetails/Special';
 import React from 'react';
-import AgentListCard from '../components/AllAgents/AgentListCard';
+import AgentListCard from '../components/Agents/AgentListCard';
 export default function AgentDetails() {
   return (
     <>

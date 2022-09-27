@@ -1,13 +1,13 @@
-import AgentGridCard from '../components/AllAgents/AgentGridCard';
-import FeatureProperties from '../components/AllAgents/FeatureProperties';
-import RecentProperties from '../components/AllAgents/RecentProperties';
-import Schedule from '../components/AllAgents/Schedule';
-import Special from '../components/AllAgents/Special';
-import Sorting from '../components/AllAgents/Sorting';
+import AgentGridCard from '../components/Agents/AgentGridCard';
+import FeatureProperties from '../components/Agents/FeatureProperties';
+import RecentProperties from '../components/Agents/RecentProperties';
+import Schedule from '../components/Agents/Schedule';
+import Special from '../components/Agents/Special';
+import Sorting from '../components/Agents/Sorting';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AgentsGridview from '../components/AllAgents/AgentsGridview';
-import AgentsListview from '../components/AllAgents/AgentListView';
+import AgentsGridview from '../components/Agents/AgentsGridview';
+import AgentsListview from '../components/Agents/AgentListView';
 import { useState } from 'react';
 
 export default function AgentListingGrid() {

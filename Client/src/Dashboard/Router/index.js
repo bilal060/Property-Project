@@ -23,7 +23,7 @@ const UserRouter = () => {
             <ProtectedRoutes exact path="/dashboard/addproperty" component={UserAddProperty} />
             <ProtectedRoutes exact path="'/dashboard/paymentmethod" component={UserPaymentMethod} />
             <ProtectedRoutes exact path="/dashboard/invoice" component={UserInvoice} />
-            <ProtectedRoutes exact path="/dashboard/allsocieties" component={AllSocieties} />
+            <ProtectedRoutes exact path="/dashboard/societies" component={AllSocieties} />
             <ProtectedRoutes exact path="/dashboard/blocks" component={AllBlocks} />
             <ProtectedRoutes exact path="/dashboard/phases" component={AllPhases} />
             <AuthenticatedRoutes exact path="/dashboard/changepassword" component={UserChangePassword} />

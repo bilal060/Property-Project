@@ -20,7 +20,7 @@ const SideBarRoutes = () => {
         },
         {
             name: "Societies",
-            link: '/dashboard/allsocieties',
+            link: '/dashboard/societies',
             icon: 'fa fa-user',
             visiblity: AgentRole() || SuperAdmin()
         }
