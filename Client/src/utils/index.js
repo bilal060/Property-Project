@@ -98,16 +98,21 @@ export const FormDataFunc = (Data) => {
 
 
 export const FormDataMultipleFiles = (Data) => {
-    console.log("Data", Data.photo)
+    console.log("Data", Data)
     const formData = new FormData();
     var objMap = new Map(Object.entries(Data));
     objMap.forEach((item, key) => {
-        if (key === 'photo') {
+        if (key === 'photo' && Data?.photo.length > 0) {
             Data?.photo?.map((itemm) => (
                 formData.append(key, itemm)
             ))
         }
-        if (key !== 'photo') {
+        if (key === 'features' && Data?.features.length > 0) {
+            Data?.features?.map((itemm) => (
+                formData.append(key, itemm)
+            ))
+        }
+        if (key !== 'photo' && key !== 'features') {
             formData.append(key, item)
         }
     });

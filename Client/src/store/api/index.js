@@ -107,7 +107,6 @@ export const addNewBlockApi = async (Data) => {
 
 
 export const editBlockApi = async (id, Data) => {
-  console.log(id, Data)
   const res = await api.patch(`/block/update/${id}`, Data, config);
   return res;
 };
@@ -140,6 +139,7 @@ export const addNewPropertyApi = async (Data) => {
 
 export const editPropertyApi = async (id, Data) => {
   console.log(id, Data)
+  config.ContentType = "multipart/form-data";
   const res = await api.patch(`/property/update/${id}`, Data, config);
   return res;
 };

@@ -25221,3 +25221,8 @@ option {
     -webkit-transition: all 0.2s !important;
     transition: all 0.2s !important;
 }
+
+.my-modal {
+    width: 63vw  !important;
+    max-width: 90vw;
+} 

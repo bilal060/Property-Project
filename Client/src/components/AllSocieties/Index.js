@@ -14,7 +14,8 @@ export default function Society({ item }) {
             <h4 className="sc-jb-title">
               <Link to="/allproperties">{item.name}</Link>
             </h4>
-            <span>203 Properties</span>
+            <span> Properties</span>
+            <span> Properties</span>
           </div>
         </div>
       </div>

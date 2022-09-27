@@ -10,7 +10,7 @@ var storage = multer.diskStorage({
     const match = ["image/png", "image/jpeg", "image/jpg"];
 
     if (match.indexOf(file.mimetype) === -1) {
-      var message = `<strong>${file.originalname}</strong> is invalid. Only accept png/jpeg.`;
+      var message = `${file.originalname}is invalid. Only accept png/jpeg.`;
       // @ts-ignore
       return callback(message, null);
     }

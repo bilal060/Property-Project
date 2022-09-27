@@ -30,7 +30,9 @@ const PropertySchema = new mongoose.Schema({
   address: {
     type: String,
   },
-
+  features: {
+    type: Array
+  },
   city: {
     type: String,
   },
@@ -85,6 +87,10 @@ const PropertySchema = new mongoose.Schema({
     ref: 'Block',
     autopopulate: true,
     required: true,
+  },
+  removed: {
+    type: Boolean,
+    default: false,
   },
   photo: {
     type: Array,
