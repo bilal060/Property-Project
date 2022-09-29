@@ -1,6 +1,43 @@
 import React from 'react'
 import Hooks from "../../hooks"
-const UserDropdownRoutes = () => {
+export const NavbarRoutes = () => {
+    const { IsUserLoggedIn } = Hooks();
+
+    const Routes = [
+        {
+            name: "Societies",
+            link: '/societies',
+            visiblity: true
+        },
+        {
+            name: "Phases",
+            link: '/phases',
+            visiblity: true
+        },
+        {
+            name: "Blocks",
+            link: '/blocks',
+            visiblity: true
+        },
+
+        {
+            name: "Agents",
+            link: '/agents',
+            visiblity: true
+        }, {
+            name: "Properties",
+            link: '/properties',
+            visiblity: true
+        }
+
+
+    ]
+
+    return Routes
+}
+
+
+export const UserDropdownRoutes = () => {
     const { IsUserLoggedIn, AgentRole, SuperAdmin } = Hooks();
 
     const Routes = [
@@ -28,5 +65,3 @@ const UserDropdownRoutes = () => {
 
     return Routes
 }
-
-export default UserDropdownRoutes

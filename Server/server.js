@@ -14,11 +14,22 @@ require('dotenv').config({ path: '.variables.env' });
 // Connect to our Database and handle any bad connections
 // mongoose.connect(process.env.DATABASE);
 
-mongoose.connect(process.env.DATABASE);
-mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
-mongoose.connection.on('error', (err) => {
-  console.error(`🚫 Error → : ${err.message}`);
-});
+mongoose
+  .connect(
+    "mongodb+srv://RFA:RFA@cluster0.jougdkj.mongodb.net/PropetyProjectDb?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log(`Connected To Online Db Successfully...... `);
+  })
+  .catch((err) => {
+    console.log(err)
+    console.log(`Connection failed`.inverse);
+  });
+
 
 const glob = require('glob');
 const path = require('path');
